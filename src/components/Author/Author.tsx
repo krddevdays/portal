@@ -35,7 +35,7 @@ export default function Author(props: AuthorProps) {
                     src={props.avatar || avatarSvg}
                     alt={fullName}
                     fill
-                    sizes="100vw"
+                    sizes="48px"
                     style={{
                         objectFit: 'cover',
                         objectPosition: 'center',

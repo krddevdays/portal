@@ -50,7 +50,7 @@ export default async function Page({ params }: Props) {
                         alt={event.name}
                         itemProp="image"
                         fill
-                        sizes="100vw"
+                        sizes="1200px"
                         style={{
                             objectFit: 'cover',
                             objectPosition: 'center',

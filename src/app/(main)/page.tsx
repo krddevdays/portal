@@ -21,7 +21,7 @@ export default function Main() {
                             src={heroImage}
                             alt=""
                             fill
-                            sizes="100vw"
+                            sizes="1200px"
                             style={{
                                 objectFit: 'cover',
                                 objectPosition: 'center',
