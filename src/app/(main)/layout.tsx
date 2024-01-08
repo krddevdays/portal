@@ -18,11 +18,27 @@ export default function MainLayout({
                             >
                                 krd.dev
                             </Link>
+                            <div className="hidden ml-10 space-x-8 lg:block">
+                                <Link
+                                    href="/events"
+                                    className="text-base font-medium text-white hover:text-indigo-50"
+                                >
+                                    Мероприятия
+                                </Link>
+                            </div>
                         </div>
+                    </div>
+                    <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
+                        <Link
+                            href="/events"
+                            className="text-base font-medium text-white hover:text-indigo-50"
+                        >
+                            Мероприятия
+                        </Link>
                     </div>
                 </nav>
             </header>
-            <div className="mt-12 flex-grow">{children}</div>
+            <div className="my-12 flex-grow">{children}</div>
             <footer className="bg-white">
                 <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
                     <div className="flex justify-center space-x-6 md:order-2">

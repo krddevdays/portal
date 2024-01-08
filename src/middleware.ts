@@ -38,6 +38,7 @@ export function middleware(request: NextRequest) {
     child-src 'self' blob: ${vkSrc} ${metricaSrc};
     frame-src 'self' blob: ${vkSrc} ${metricaSrc};
     img-src 'self' blob: data: ${vkSrc} ${metricaSrc};
+    media-src 'self' https://storage.yandexcloud.net;
     font-src 'self';
     object-src 'none';
     base-uri 'self';

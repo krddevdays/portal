@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
-import './globals.css'
 import Script from 'next/script'
 import { stripIndent } from 'common-tags'
 import { headers } from 'next/headers'
+import { Providers } from './providers'
+
+import './globals.css'
+import './legacy.css'
 
 export const metadata: Metadata = {
     title: { default: 'krd.dev', template: '%s — krd.dev' },
+    metadataBase: new URL('https://krd.dev'),
 }
 
 export default function RootLayout({
@@ -77,7 +81,7 @@ export default function RootLayout({
                         />
                     </div>
                 </noscript>
-                {children}
+                <Providers>{children}</Providers>
             </body>
         </html>
     )

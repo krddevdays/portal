@@ -9,3 +9,4 @@ next-env.d.ts
 /coverage
 .eslintcache
 /.idea
+.env.local
