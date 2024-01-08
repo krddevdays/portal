@@ -1,0 +1,14 @@
+.headerImage {
+    background-image: url('./breakfast-header.svg');
+    background-size: cover;
+}
+
+.infoImage {
+    background-image: url('./breakfast-info.svg');
+    background-size: cover;
+}
+
+.mainImage {
+    background-image: url('./breakfast-main.svg');
+    background-size: cover;
+}
