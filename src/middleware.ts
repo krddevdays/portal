@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+const assetsSrc = process.env.ASSET_PREFIX || ''
+
 const metricaSrc = [
     'https://mc.yandex.ru',
     'https://mc.yandex.az',
@@ -32,14 +34,14 @@ export function middleware(request: NextRequest) {
 
     const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' ${vkSrc} ${metricaSrc} 'nonce-${nonce}' 'strict-dynamic';
-    style-src 'self' 'unsafe-inline';
-    connect-src 'self' ${vkSrc} ${metricaSrc};
+    script-src 'self' ${assetsSrc} 'unsafe-eval' ${vkSrc} ${metricaSrc} 'nonce-${nonce}' 'strict-dynamic';
+    style-src 'self' ${assetsSrc} 'unsafe-inline';
+    connect-src 'self' https://o260762.ingest.sentry.io ${vkSrc} ${metricaSrc};
     child-src 'self' blob: ${vkSrc} ${metricaSrc};
     frame-src 'self' blob: ${vkSrc} ${metricaSrc};
-    img-src 'self' blob: data: ${vkSrc} ${metricaSrc};
-    media-src 'self' https://storage.yandexcloud.net;
-    font-src 'self';
+    img-src 'self' ${assetsSrc} blob: data: ${vkSrc} ${metricaSrc};
+    media-src 'self' ${assetsSrc} https://storage.yandexcloud.net;
+    font-src 'self' ${assetsSrc};
     object-src 'none';
     base-uri 'self';
     form-action 'self';
@@ -56,7 +58,7 @@ export function middleware(request: NextRequest) {
 
     requestHeaders.set(
         'Content-Security-Policy',
-        contentSecurityPolicyHeaderValue
+        `${contentSecurityPolicyHeaderValue}; report-uri https://o260762.ingest.sentry.io/api/4506539734859777/security/?sentry_key=d2d5c188ea43ce985bbf00dfb9748990; report-to {"group":"default","max_age":10886400,"endpoints":[{"url":"https://o260762.ingest.sentry.io/api/4506539734859777/security/?sentry_key=d2d5c188ea43ce985bbf00dfb9748990"}],"include_subdomains":true}`
     )
 
     const response = NextResponse.next({
