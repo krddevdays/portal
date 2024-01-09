@@ -167,9 +167,7 @@ function TicketField({
             <FormField
                 control={control}
                 name={`${name}.type`}
-                render={({
-                    field: { ref, onBlur, value, onChange, ...field },
-                }) => (
+                render={({ field: { value, onChange, ...field } }) => (
                     <FormItem>
                         <Select
                             onValueChange={onChange}
@@ -332,7 +330,7 @@ function PaymentForm({
                     name="type"
                     render={({
                         formState,
-                        field: { ref, onBlur, value, onChange, ...field },
+                        field: { value, onChange, ...field },
                     }) => {
                         const payment = payments.find(
                             (payment) => payment.type.toString() == value

@@ -12,7 +12,7 @@ const speakerSchema = z.object({
     position: z.string().optional(),
 })
 
-type Speaker = z.infer<typeof speakerSchema>
+// type Speaker = z.infer<typeof speakerSchema>
 
 const talkSchema = z.object({
     title: z.string(),
@@ -20,7 +20,7 @@ const talkSchema = z.object({
     speaker: speakerSchema,
 })
 
-type Talk = z.infer<typeof talkSchema>
+// type Talk = z.infer<typeof talkSchema>
 
 const activityTalkSchema = z.object({
     type: z.literal('TALK'),
@@ -41,7 +41,7 @@ const discussionSchema = z.object({
     description: z.string().optional(),
 })
 
-type Discussion = z.infer<typeof discussionSchema>
+// type Discussion = z.infer<typeof discussionSchema>
 
 const activityDiscussionSchema = z.object({
     type: z.literal('DISCUSSION'),
@@ -51,7 +51,7 @@ const activityDiscussionSchema = z.object({
     thing: discussionSchema,
 })
 
-type ActivityDiscussion = z.infer<typeof activityDiscussionSchema>
+// type ActivityDiscussion = z.infer<typeof activityDiscussionSchema>
 
 const activityWelcomeSchema = z.object({
     type: z.literal('WELCOME'),

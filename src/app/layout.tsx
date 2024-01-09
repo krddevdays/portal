@@ -63,6 +63,7 @@ export default function RootLayout({
                     <div>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
+                            fetchPriority={'low'}
                             src="https://mc.yandex.ru/watch/53951545"
                             style={{
                                 position: 'absolute',
@@ -72,6 +73,7 @@ export default function RootLayout({
                         />
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
+                            fetchPriority={'low'}
                             src="https://top-fwz1.mail.ru/counter?id=3469783;js=na"
                             style={{
                                 position: 'absolute',

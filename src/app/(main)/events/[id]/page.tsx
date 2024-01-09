@@ -1,9 +1,4 @@
-import {
-    getEvent,
-    getEvents,
-    isActivityTalk,
-    isScheduleActivity,
-} from '@/api/events'
+import { getEvent, isActivityTalk, isScheduleActivity } from '@/api/events'
 import { notFound } from 'next/navigation'
 import { getTickets } from '@/api/qtickets'
 import Image from 'next/image'

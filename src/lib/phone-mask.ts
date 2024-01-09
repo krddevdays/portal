@@ -53,7 +53,7 @@ function createAvoidOfEightPrefixPreprocessor(): MaskitoPreprocessor {
     const trimPrefix = (value: string): string =>
         value.replace(/^(\+?7?\s?8?)\s?/, '')
 
-    return ({ elementState, data }, actionType) => {
+    return ({ elementState, data }) => {
         const { value, selection } = elementState
 
         if (data.length === 1 && data !== '9' && trimPrefix(value) === '') {

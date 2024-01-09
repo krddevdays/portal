@@ -171,7 +171,7 @@ export async function getTickets(
 ): Promise<EventTicketsResponse | null> {
     const qticketsEvent = await externalApi
         .get(`/events/${id}`)
-        .notFound((e) => null)
+        .notFound(() => null)
         .json<QticketsEvent | null>()
 
     if (!qticketsEvent) {

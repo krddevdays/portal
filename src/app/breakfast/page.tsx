@@ -63,6 +63,7 @@ export default function Page() {
                             <div className="opacity-70">Ближайший завтрак:</div>
                             <div>
                                 <div className="pt-[8px] sm:pt-[12px] md:pt-[18px] flex flex-row justify-items-start">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src={calendarImage.src}
                                         className="w-[24px] h-[24px] sm:w-[18px] sm:h-[18px] md:w-[24px] md:h-[24px]"
@@ -74,6 +75,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 <div className="pt-[18px] sm:pt-[12px] md:pt-[18px] flex flex-row justify-items-start">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src={locationImage.src}
                                         className="w-[24px] h-[24px] sm:w-[18px] sm:h-[18px] md:w-[24px] md:h-[24px]"
