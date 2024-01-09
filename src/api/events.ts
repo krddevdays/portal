@@ -142,7 +142,7 @@ const schema = z.object({
     activities: activitiesSchema.default([]),
 })
 
-type EventResponse = z.infer<typeof schema>
+export type EventResponse = z.infer<typeof schema>
 
 const eventsDirectory = path.join(process.cwd(), '/src/data/events')
 
@@ -156,10 +156,14 @@ export async function getEvent(id: string): Promise<EventResponse | null> {
 
 type EventsResponse = Array<EventResponse>
 
+let events: null | EventsResponse = null
+
 export async function getEvents(): Promise<EventsResponse> {
+    if (events !== null) return events
+
     const fileNames = fs.readdirSync(eventsDirectory)
 
-    return fileNames
+    return (events = fileNames
         .map((fileName) => {
             const fullPath = path.join(eventsDirectory, fileName)
             const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -175,5 +179,5 @@ export async function getEvents(): Promise<EventsResponse> {
             (a, b) =>
                 new Date(b.start_date).getTime() -
                 new Date(a.start_date).getTime()
-        )
+        ))
 }

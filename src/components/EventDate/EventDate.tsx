@@ -36,15 +36,14 @@ export function EventDate(props: {
         }
 
         return (
-            <div>
+            <span>
                 <FormattedDate
                     value={props.startAt}
                     month="long"
                     day="numeric"
                     year={!inCurrentYear ? 'numeric' : undefined}
                 />
-                <br />
-                с{' '}
+                <br />с{' '}
                 <FormattedDate
                     value={props.startAt}
                     hour="numeric"
@@ -56,7 +55,7 @@ export function EventDate(props: {
                     hour="numeric"
                     minute="numeric"
                 />
-            </div>
+            </span>
         )
     }
 
@@ -76,7 +75,7 @@ export function EventDate(props: {
     }
 
     return (
-        <div>
+        <span>
             <FormattedDate value={props.startAt} day="numeric" />
             -
             <FormattedDate
@@ -85,8 +84,7 @@ export function EventDate(props: {
                 day="numeric"
                 year={!inCurrentYear ? 'numeric' : undefined}
             />
-            <br />
-            с{' '}
+            <br />с{' '}
             <FormattedDate
                 value={props.startAt}
                 hour="numeric"
@@ -98,7 +96,7 @@ export function EventDate(props: {
                 hour="numeric"
                 minute="numeric"
             />
-        </div>
+        </span>
     )
 }
 

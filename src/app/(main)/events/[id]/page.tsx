@@ -12,6 +12,15 @@ import styles from './styles.module.css'
 import Author, { AuthorProps } from '@/components/Author/Author'
 import { Schedule } from '@/app/(main)/events/[id]/schedule'
 import { buttonVariants } from '@/components/ui/button.tsx'
+import React, { Suspense } from 'react'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+} from '@/components/ui/card.tsx'
+import { Skeleton } from '@/components/ui/skeleton.tsx'
 
 type Props = {
     params: { id: string }
@@ -23,10 +32,6 @@ export default async function Page({ params }: Props) {
     if (event === null) {
         notFound()
     }
-
-    const tickets = event.qtickets_id
-        ? await getTickets(event.qtickets_id)
-        : null
     const talks = event.activities
         .filter(isActivityTalk)
         .map((activity) => activity.thing)
@@ -69,18 +74,22 @@ export default async function Page({ params }: Props) {
                     )}
                 </div>
                 <EventInformation
-                    tickets={tickets}
                     startDate={event.start_date}
                     finishDate={event.finish_date}
                     venue={event.venue}
+                    qticketsId={event.qtickets_id}
                 />
                 <Talks talks={talks} />
                 <Schedule activities={activities} />
-                <EventPrice
-                    tickets={tickets}
-                    description={event.ticket_description}
-                    eventId={event.legacy_id.toString()}
-                />
+                {event.qtickets_id && (
+                    <Suspense>
+                        <EventPrice
+                            description={event.ticket_description}
+                            eventId={event.legacy_id.toString()}
+                            qticketsId={event.qtickets_id}
+                        />
+                    </Suspense>
+                )}
             </div>
         </div>
     )
@@ -138,194 +147,215 @@ type EventVenue = {
     longitude: number
 }
 
-export type EventTickets = {
-    is_active: boolean
-    sale_start_date: string | null
-    sale_finish_date: string
-    types: Array<{
-        id: string
-        disabled: boolean
-        name: string
-        price: {
-            current_value: string
-            default_value: string
-            modifiers: Array<
-                | {
-                      value: string
-                      type: 'sales_count'
-                      sales_count: number
-                  }
-                | {
-                      value: string
-                      type: 'date'
-                      active_from: string
-                      active_to: string
-                  }
-            >
-        }
-    }>
-    payments: Array<{
-        type: 'card' | 'invoice' | 'free'
-        agree_url: string
-    }>
-}
-
 type EventInformationProps = {
-    tickets: EventTickets | null
     startDate: string
     finishDate: string
     venue: EventVenue
+    qticketsId?: number
 }
 
-function EventInformation(props: EventInformationProps) {
+function VenueCard(props: { venue: EventVenue }) {
+    return (
+        <Card>
+            <CardHeader>
+                <CardDescription>Место проведения</CardDescription>
+            </CardHeader>
+            <CardContent
+                itemProp="location"
+                itemScope
+                itemType="https://schema.org/Place"
+            >
+                <CardDescription className="text-foreground" itemProp="name">
+                    {props.venue.name}
+                </CardDescription>
+                <CardDescription className="text-foreground" itemProp="name">
+                    {props.venue.address}
+                </CardDescription>
+                <span
+                    itemProp="geo"
+                    itemScope
+                    itemType="https://schema.org/GeoCoordinates"
+                >
+                    <meta
+                        itemProp="latitude"
+                        content={props.venue.latitude.toString()}
+                    />
+                    <meta
+                        itemProp="longitude"
+                        content={props.venue.longitude.toString()}
+                    />
+                </span>
+            </CardContent>
+            <CardFooter>
+                <a
+                    href={`https://yandex.ru/maps/?pt=${props.venue.longitude},${props.venue.latitude}&z=15&l=map`}
+                    target="_blank"
+                    rel="noreferrer nofollow noopener"
+                    className="text-xs font-semibold hover:underline text-indigo-700"
+                >
+                    Смотреть на карте
+                </a>
+            </CardFooter>
+        </Card>
+    )
+}
+
+function DateTimeCard(props: { startDate: string; finishDate: string }) {
     const startAt = new Date(props.startDate)
     const finishAt = new Date(props.finishDate)
 
-    const price = (props.tickets ? props.tickets.types : []).reduce<null | {
-        min: string
-        max: string
-    }>((price, type) => {
-        if (type.disabled) return price
-
-        if (price === null) {
-            return {
-                min: type.price.current_value,
-                max: type.price.current_value,
-            }
-        }
-
-        const newPrice = { ...price }
-
-        if (parseFloat(price.min) > parseFloat(type.price.current_value)) {
-            newPrice.min = type.price.current_value
-        }
-
-        if (parseFloat(price.max) < parseFloat(type.price.current_value)) {
-            newPrice.max = type.price.current_value
-        }
-
-        return newPrice
-    }, null)
-
     return (
-        <dl
-            className={clsx('mt-10 grid grid-cols-1 gap-5', {
-                'lg:grid-cols-3': price !== null,
-                'lg:grid-cols-2': price === null,
-            })}
-        >
-            <div className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
-                <dt className="text-sm font-medium text-gray-500 truncate">
-                    Дата и время
-                </dt>
-                <dd className="mt-1 text-sm text-gray-900">
+        <Card>
+            <CardHeader>
+                <CardDescription>Дата и время</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <CardDescription className="text-foreground">
                     <meta
                         itemProp="startDate"
                         content={startAt.toISOString()}
                     />
                     <meta itemProp="endDate" content={finishAt.toISOString()} />
                     <EventDate startAt={startAt} finishAt={finishAt} />
-                </dd>
-            </div>
-            <div className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
-                <dt className="text-sm font-medium text-gray-500 truncate">
-                    Место проведения
-                </dt>
-                <dd
-                    className="mt-1 text-sm text-gray-900"
-                    itemProp="location"
-                    itemScope
-                    itemType="https://schema.org/Place"
+                </CardDescription>
+            </CardContent>
+        </Card>
+    )
+}
+
+function LoadingPriceCard() {
+    return (
+        <Card>
+            <CardHeader>
+                <CardDescription>Стоимость участия</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <CardDescription>
+                    <Skeleton className="h-5 w-full" />
+                </CardDescription>
+            </CardContent>
+            <CardFooter>
+                <a
+                    className="text-xs font-semibold hover:underline text-indigo-700"
+                    href="#event_price"
                 >
-                    <span itemProp="name">{props.venue.name}</span>
-                    <br />
-                    <span itemProp="address">{props.venue.address}</span>
-                    <div
-                        itemProp="geo"
-                        itemScope
-                        itemType="https://schema.org/GeoCoordinates"
-                    >
-                        <meta
-                            itemProp="latitude"
-                            content={props.venue.latitude.toString()}
+                    Подробнее
+                </a>
+            </CardFooter>
+        </Card>
+    )
+}
+
+async function PriceCard(props: { qticketsId: number }) {
+    const tickets = await getTickets(props.qticketsId)
+
+    if (!tickets || tickets.types.length === 0) return null
+
+    const price = tickets.types.reduce<{
+        min: string
+        max: string
+    }>(
+        (price, type) => {
+            const newPrice = { ...price }
+
+            if (parseFloat(price.min) > parseFloat(type.price.current_value)) {
+                newPrice.min = type.price.current_value
+            }
+
+            if (parseFloat(price.max) < parseFloat(type.price.current_value)) {
+                newPrice.max = type.price.current_value
+            }
+
+            return newPrice
+        },
+        {
+            min: tickets.types[0].price.current_value,
+            max: tickets.types[0].price.current_value,
+        }
+    )
+
+    return (
+        <Card>
+            <CardHeader>
+                <CardDescription>Стоимость участия</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <CardDescription className="text-foreground">
+                    {price.min !== price.max ? (
+                        <>
+                            от{' '}
+                            <FormattedNumber
+                                style="currency"
+                                value={parseFloat(price.min)}
+                                currency="RUB"
+                                minimumFractionDigits={0}
+                            />{' '}
+                            до{' '}
+                            <FormattedNumber
+                                style="currency"
+                                value={parseFloat(price.max)}
+                                currency="RUB"
+                                minimumFractionDigits={0}
+                            />
+                        </>
+                    ) : price.min === '0' ? (
+                        'Бесплатно'
+                    ) : (
+                        <FormattedNumber
+                            style="currency"
+                            value={parseFloat(price.min)}
+                            currency="RUB"
+                            minimumFractionDigits={0}
                         />
-                        <meta
-                            itemProp="longitude"
-                            content={props.venue.longitude.toString()}
-                        />
-                    </div>
-                    <div className="mt-2">
-                        <a
-                            href={`https://yandex.ru/maps/?pt=${props.venue.longitude},${props.venue.latitude}&z=15&l=map`}
-                            target="_blank"
-                            rel="noreferrer nofollow noopener"
-                            className="text-xs font-semibold hover:underline text-indigo-700"
-                        >
-                            Смотреть на карте
-                        </a>
-                    </div>
-                </dd>
-            </div>
-            {price !== null && (
-                <div className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
-                    <dt className="text-sm font-medium text-gray-500 truncate">
-                        Стоимость участия
-                    </dt>
-                    <dd className="mt-1 text-sm text-gray-900">
-                        <div>
-                            {price.min !== price.max ? (
-                                <>
-                                    от{' '}
-                                    <FormattedNumber
-                                        style="currency"
-                                        value={parseFloat(price.min)}
-                                        currency="RUB"
-                                        minimumFractionDigits={0}
-                                    />{' '}
-                                    до{' '}
-                                    <FormattedNumber
-                                        style="currency"
-                                        value={parseFloat(price.max)}
-                                        currency="RUB"
-                                        minimumFractionDigits={0}
-                                    />
-                                </>
-                            ) : price.min === '0' ? (
-                                'Бесплатно'
-                            ) : (
-                                <FormattedNumber
-                                    style="currency"
-                                    value={parseFloat(price.min)}
-                                    currency="RUB"
-                                    minimumFractionDigits={0}
-                                />
-                            )}
-                        </div>
-                        <div className="mt-2">
-                            <a
-                                className="text-xs font-semibold hover:underline text-indigo-700"
-                                href="#event_price"
-                            >
-                                Подробнее
-                            </a>
-                        </div>
-                    </dd>
-                </div>
+                    )}
+                </CardDescription>
+            </CardContent>
+            <CardFooter>
+                <a
+                    className="text-xs font-semibold hover:underline text-indigo-700"
+                    href="#event_price"
+                >
+                    Подробнее
+                </a>
+            </CardFooter>
+        </Card>
+    )
+}
+
+function EventInformation(props: EventInformationProps) {
+    return (
+        <div
+            className={clsx('mt-10 grid grid-cols-1 gap-5', {
+                'lg:grid-cols-3': props.qticketsId !== undefined,
+                'lg:grid-cols-2': props.qticketsId === undefined,
+            })}
+        >
+            <DateTimeCard
+                startDate={props.startDate}
+                finishDate={props.finishDate}
+            />
+            <VenueCard venue={props.venue} />
+            {props.qticketsId && (
+                <Suspense fallback={<LoadingPriceCard />}>
+                    <PriceCard qticketsId={props.qticketsId} />
+                </Suspense>
             )}
-        </dl>
+        </div>
     )
 }
 
 type EventPriceProps = {
     eventId: string
-    tickets: EventTickets | null
+    qticketsId: number
     description?: string
 }
 
-function EventPrice(props: EventPriceProps) {
-    if (props.tickets === null || props.tickets.types.length === 0) return null
+async function EventPrice(props: EventPriceProps) {
+    const tickets = await getTickets(props.qticketsId)
 
-    const types = props.tickets.types.map((type) => ({
+    if (tickets === null || tickets.types.length === 0) return null
+
+    const types = tickets.types.map((type) => ({
         name: type.name,
         price: {
             value: type.price.current_value,
@@ -357,7 +387,7 @@ function EventPrice(props: EventPriceProps) {
                         </div>
                     ))}
                 </div>
-                {props.tickets.is_active ? (
+                {tickets.is_active ? (
                     <div className={styles.eventPriceButton}>
                         <Link
                             href={`/events/${props.eventId}/order`}
@@ -368,7 +398,7 @@ function EventPrice(props: EventPriceProps) {
                         <p className={styles.eventPriceButton__description}>
                             Регистрация открыта до{' '}
                             <FormattedDate
-                                value={props.tickets.sale_finish_date}
+                                value={tickets.sale_finish_date}
                                 month="long"
                                 day="numeric"
                             />

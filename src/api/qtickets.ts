@@ -2,8 +2,10 @@ import 'server-only'
 import qs from 'qs'
 import wretch from 'wretch'
 import QueryStringAddon from 'wretch/addons/queryString'
+import { dedupe } from 'wretch/middlewares/dedupe'
 
 const externalApi = wretch('https://qtickets.ru/api/rest/v1')
+    .middlewares([dedupe()])
     .addon(QueryStringAddon)
     .auth(`Bearer ${process.env.QTICKETS_TOKEN}`)
     .catcherFallback((e) => {
