@@ -1,8 +1,8 @@
+import 'server-only'
 import path from 'path'
 import * as fs from 'fs'
 import matter from 'gray-matter'
 import { z } from 'zod'
-import { act } from 'react-dom/test-utils'
 
 const speakerSchema = z.object({
     first_name: z.string(),

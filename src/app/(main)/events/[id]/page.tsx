@@ -16,6 +16,7 @@ import { FormattedDate } from '@/components/FormattedDate'
 import styles from './styles.module.css'
 import Author, { AuthorProps } from '@/components/Author/Author'
 import { Schedule } from '@/app/(main)/events/[id]/schedule'
+import { buttonVariants } from '@/components/ui/button.tsx'
 
 type Props = {
     params: { id: string }
@@ -169,7 +170,6 @@ export type EventTickets = {
         }
     }>
     payments: Array<{
-        id: number
         type: 'card' | 'invoice' | 'free'
         agree_url: string
     }>
@@ -186,9 +186,7 @@ function EventInformation(props: EventInformationProps) {
     const startAt = new Date(props.startDate)
     const finishAt = new Date(props.finishDate)
 
-    const price = (
-        props.tickets && props.tickets.is_active ? props.tickets.types : []
-    ).reduce<null | {
+    const price = (props.tickets ? props.tickets.types : []).reduce<null | {
         min: string
         max: string
     }>((price, type) => {
@@ -332,20 +330,6 @@ type EventPriceProps = {
 function EventPrice(props: EventPriceProps) {
     if (props.tickets === null || props.tickets.types.length === 0) return null
 
-    let ticketsAvailable = props.tickets.is_active
-
-    if (ticketsAvailable && props.tickets.sale_start_date !== null) {
-        ticketsAvailable =
-            new Date(props.tickets.sale_start_date).getTime() <=
-            new Date().getTime()
-    }
-
-    if (ticketsAvailable) {
-        ticketsAvailable =
-            new Date(props.tickets.sale_finish_date).getTime() >
-            new Date().getTime()
-    }
-
     const types = props.tickets.types.map((type) => ({
         name: type.name,
         price: {
@@ -378,18 +362,11 @@ function EventPrice(props: EventPriceProps) {
                         </div>
                     ))}
                 </div>
-                {ticketsAvailable && (
+                {props.tickets.is_active ? (
                     <div className={styles.eventPriceButton}>
                         <Link
                             href={`/events/${props.eventId}/order`}
-                            className="button"
-                            // onClick={() => {
-                            //     const params = {
-                            //         event_id: props.eventId,
-                            //     };
-                            //     ym(53951545, 'reachGoal', 'click_event_buy_button', params);
-                            //     _tmr.push({ type: 'reachGoal', goal: 'click_event_buy_button', params });
-                            // }}
+                            className={buttonVariants()}
                         >
                             Зарегистрироваться
                         </Link>
@@ -402,8 +379,7 @@ function EventPrice(props: EventPriceProps) {
                             />
                         </p>
                     </div>
-                )}
-                {!ticketsAvailable && (
+                ) : (
                     <div className={styles.eventPriceButton}>
                         <p className={styles.eventPriceButton__description}>
                             Регистрация закрыта

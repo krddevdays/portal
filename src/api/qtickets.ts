@@ -1,4 +1,4 @@
-import { getEvent } from '@/api/events'
+import 'server-only'
 import qs from 'qs'
 import wretch from 'wretch'
 import QueryStringAddon from 'wretch/addons/queryString'
@@ -10,9 +10,12 @@ const externalApi = wretch('https://qtickets.ru/api/rest/v1')
         throw new Error('Неизвестная ошибка', { cause: e })
     })
 
-type EventTicketPayment = {
+export { externalApi as qticketsApi }
+
+export type EventTicketPayment = {
     id: number
     type: 'card' | 'invoice' | 'free'
+    name: string
     agree_url: string
 }
 
@@ -29,9 +32,10 @@ type EventTicketsPriceModifier =
           active_to: string
       }
 
-type EventTicketsTypes = {
+export type EventTicketsType = {
     id: string
     disabled: boolean
+    free_quantity: number
     name: string
     price: {
         current_value: string
@@ -41,11 +45,13 @@ type EventTicketsTypes = {
 }
 
 type EventTicketsResponse = {
+    show_id: number
     is_active: boolean
     sale_start_date: string | null
     sale_finish_date: string
+    currency_id: string
     payments: Array<EventTicketPayment>
-    types: Array<EventTicketsTypes>
+    types: Array<EventTicketsType>
 }
 
 type QticketsPriceModifier =
@@ -130,6 +136,7 @@ type QticketsPayment = {
 type QticketsEvent = {
     data: {
         is_active: number
+        currency_id: string
         shows: Array<QticketsShow>
         payments: Array<QticketsPayment>
     }
@@ -192,29 +199,37 @@ export async function getTickets(
         .json<QticketsShowSeats>()
 
     return {
+        show_id: qticketsShow.id,
         is_active:
             Boolean(qticketsEvent.data.is_active) &&
-            Boolean(qticketsShow.is_active),
+            Boolean(qticketsShow.is_active) &&
+            (!qticketsShow.sale_start_date ||
+                new Date() > new Date(qticketsShow.sale_start_date)) &&
+            new Date() < new Date(qticketsShow.sale_finish_date),
         sale_start_date: qticketsShow.sale_start_date,
         sale_finish_date: qticketsShow.sale_finish_date,
+        currency_id: qticketsEvent.data.currency_id,
         payments: qticketsEvent.data.payments.reduce<EventTicketPayment[]>(
             (payments, payment) => {
                 if (payment.handler === 'payanyway') {
                     payments.push({
                         id: payment.id,
                         type: 'card',
+                        name: 'Банковской картой',
                         agree_url: payment.agree_url,
                     })
                 } else if (payment.handler === 'invoice') {
                     payments.push({
                         id: payment.id,
                         type: 'invoice',
+                        name: 'По счету',
                         agree_url: payment.agree_url,
                     })
                 } else if (payment.handler === 'free') {
                     payments.push({
                         id: payment['id'],
                         type: 'free',
+                        name: 'Бесплатно',
                         agree_url: payment['agree_url'],
                     })
                 }
@@ -224,7 +239,7 @@ export async function getTickets(
             []
         ),
         types: Object.values(Object.values(qticketsSeats.data)).reduce<
-            EventTicketsTypes[]
+            EventTicketsType[]
         >((types, zone) => {
             const zone_scheme =
                 qticketsShow.scheme_properties.zones[zone.zone_id]
@@ -242,6 +257,7 @@ export async function getTickets(
                     id: seat.seat_id,
                     name: seat.name,
                     disabled: seat.free_quantity === 0,
+                    free_quantity: seat.free_quantity,
                     price: price
                         ? {
                               current_value: seat.price.toString(),
