@@ -2,6 +2,8 @@ import Image from 'next/image'
 
 import heroImage from './hero.jpg'
 import { Metadata } from 'next'
+import EventsList from '@/components/EventsList/EventsList.tsx'
+import { getEvents } from '@/api/events.ts'
 
 export const metadata: Metadata = {
     title: 'Некоммерческое ИТ-сообщество Краснодара',
@@ -9,10 +11,14 @@ export const metadata: Metadata = {
         'Создано чтобы аккумулировать знания и опыт, поддерживать специалистов из сферы информационных технологий и создавать для них благоприятную среду',
 }
 
-export default function Main() {
+export default async function Main() {
+    const events = (await getEvents()).filter(
+        (event) => new Date(event.finish_date) > new Date()
+    )
+
     return (
-        <main className="relative">
-            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <main>
+            <div className="relative max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
                     <div className="absolute inset-0">
                         <Image
@@ -46,6 +52,16 @@ export default function Main() {
                     </div>
                 </div>
             </div>
+            {events.length > 0 && (
+                <section className="max-w-7xl sm:px-6 lg:px-8 mt-10 mx-2 sm:mx-auto">
+                    <h2 className="text-lg leading-6 font-medium text-gray-900 text-center">
+                        Предстоящие мероприятия
+                    </h2>
+                    <div className="mt-6">
+                        <EventsList events={events} />
+                    </div>
+                </section>
+            )}
         </main>
     )
 }
