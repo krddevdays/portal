@@ -58,6 +58,7 @@ export default function RootLayout({
                     `,
                 }}
             />
+
             <body className={'antialiased font-sans'}>
                 <noscript>
                     <div>
