@@ -13,6 +13,16 @@ const nextConfig = {
             },
         ],
     },
+    async redirects() {
+        return [
+            {
+                source: '/cfp',
+                destination:
+                    'https://forms.yandex.ru/cloud/5adc61cf6162d77e2714831c',
+                permanent: false,
+            },
+        ]
+    },
     assetPrefix: process.env.ASSET_PREFIX,
     reactStrictMode: true,
     poweredByHeader: false,
