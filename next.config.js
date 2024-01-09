@@ -13,6 +13,7 @@ const nextConfig = {
             },
         ],
     },
+    assetPrefix: process.env.ASSET_PREFIX,
     reactStrictMode: true,
     poweredByHeader: false,
     productionBrowserSourceMaps: false,
@@ -21,4 +22,17 @@ const nextConfig = {
     },
 }
 
-module.exports = nextConfig
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { withSentryConfig } = require('@sentry/nextjs')
+
+module.exports = withSentryConfig(
+    nextConfig,
+    {
+        silent: true,
+    },
+    {
+        widenClientFileUpload: true,
+        hideSourceMaps: true,
+        disableLogger: true,
+    }
+)

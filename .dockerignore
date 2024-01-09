@@ -10,3 +10,5 @@ next-env.d.ts
 .eslintcache
 /.idea
 .env.local
+# Sentry Config File
+.sentryclirc
