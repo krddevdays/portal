@@ -4,7 +4,6 @@ import {
     useForm,
     Control,
     FieldPathByValue,
-    useWatch,
 } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -36,11 +35,14 @@ import {
     TicketSchema,
     ticketsSchema,
     TicketsSchema,
-} from '@/app/(main)/events/[id]/order/schemas.ts'
-import { createOrder } from '@/app/(main)/events/[id]/order/create.ts'
-import { FormattedDate } from '@/components/FormattedDate.tsx'
-import { FormattedNumber } from '@/components/FormattedNumber.tsx'
+} from './schemas.ts'
+import { createOrder } from './/create'
+import { FormattedDate } from '@/components/FormattedDate'
+import { FormattedNumber } from '@/components/FormattedNumber'
 import clsx from 'clsx'
+import { MaskedInput } from '@/components/MaskedInput'
+import { phoneMaskOptions } from '@/lib/phone-mask'
+import { Loader2 } from 'lucide-react'
 
 function RequesterForm({
     onSubmit,
@@ -106,7 +108,9 @@ function RequesterForm({
                         <FormItem>
                             <FormLabel>Телефон</FormLabel>
                             <FormControl>
-                                <Input
+                                <MaskedInput
+                                    placeholder="+7"
+                                    options={phoneMaskOptions}
                                     inputMode="tel"
                                     autoComplete="tel"
                                     enterKeyHint="done"
@@ -327,6 +331,7 @@ function PaymentForm({
                     control={form.control}
                     name="type"
                     render={({
+                        formState,
                         field: { ref, onBlur, value, onChange, ...field },
                     }) => {
                         const payment = payments.find(
@@ -343,7 +348,11 @@ function PaymentForm({
                                         {...field}
                                     >
                                         <FormControl>
-                                            <SelectTrigger>
+                                            <SelectTrigger
+                                                disabled={
+                                                    formState.isSubmitting
+                                                }
+                                            >
                                                 <SelectValue placeholder="Выберите способ оплаты" />
                                             </SelectTrigger>
                                         </FormControl>
@@ -380,6 +389,7 @@ function PaymentForm({
                                     <>
                                         <FormField
                                             control={form.control}
+                                            disabled={formState.isSubmitting}
                                             name="legal_name"
                                             render={({ field }) => (
                                                 <FormItem>
@@ -395,6 +405,7 @@ function PaymentForm({
                                         />
                                         <FormField
                                             control={form.control}
+                                            disabled={formState.isSubmitting}
                                             name="inn"
                                             render={({ field }) => (
                                                 <FormItem>
@@ -412,7 +423,14 @@ function PaymentForm({
                         )
                     }}
                 />
-                <Button type="submit" className="w-full">
+                <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={form.formState.isSubmitting}
+                >
+                    {form.formState.isSubmitting && (
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    )}
                     Продолжить
                 </Button>
                 <FormMessage />

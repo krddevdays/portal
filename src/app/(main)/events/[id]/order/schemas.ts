@@ -1,4 +1,5 @@
 import * as z from 'zod'
+import { clearPhone, validatePhone } from '@/lib/phone-mask.ts'
 
 export const requesterSchema = z.object({
     first_name: z.string().min(1, 'Введите имя'),
@@ -9,15 +10,13 @@ export const requesterSchema = z.object({
         .optional()
         .transform((value) => {
             // normalization
-            return value?.replaceAll(/[^+0-9]/g, '').replace(/^8/, '+7')
+            return value ? clearPhone(value) : value
         })
         .refine((value) => {
             // it is optional
             if (value === undefined || value.trim().length === 0) return true
 
-            if (value.length !== 12) return false
-
-            return /^\+7/.test(value)
+            return validatePhone(value)
         }, 'Неверный номер телефона')
         .transform((value) => {
             // map empty string to undefined
