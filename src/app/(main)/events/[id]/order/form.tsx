@@ -515,6 +515,22 @@ export function OrderForm(props: OrderFormProps) {
                 })
 
                 setOrder(order)
+
+                const params = {
+                    event_id: props.eventId,
+                    order_id: order.id,
+                    currency: order.currency,
+                    order_price: order.price,
+                }
+
+                ym(53951545, 'reachGoal', 'event_order_success', params)
+
+                _tmr.push({
+                    type: 'reachGoal',
+                    goal: 'event_order_success',
+                    value: order.price,
+                    params,
+                })
             }}
         />
     )
