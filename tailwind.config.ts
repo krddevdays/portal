@@ -70,6 +70,7 @@ const config = {
         },
     },
     plugins: [
+        require('tailwindcss-safe-area'),
         require('tailwindcss-animate'),
         require('@tailwindcss/typography'),
     ],

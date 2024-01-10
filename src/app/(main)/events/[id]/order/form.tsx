@@ -95,7 +95,11 @@ function RequesterForm({
                         <FormItem>
                             <FormLabel>E-mail</FormLabel>
                             <FormControl>
-                                <Input type="email" {...field} />
+                                <Input
+                                    autoComplete="email"
+                                    inputMode="email"
+                                    {...field}
+                                />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -224,7 +228,11 @@ function TicketField({
                     <FormItem>
                         <FormLabel>E-mail</FormLabel>
                         <FormControl>
-                            <Input type="email" {...field} />
+                            <Input
+                                autoComplete="email"
+                                inputMode="email"
+                                {...field}
+                            />
                         </FormControl>
                         <FormMessage />
                     </FormItem>

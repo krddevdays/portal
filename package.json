@@ -37,6 +37,7 @@
         "sharp": "^0.33.1",
         "tailwind-merge": "2.2.0",
         "tailwindcss-animate": "1.0.7",
+        "tailwindcss-safe-area": "0.4.1",
         "wretch": "^2.8.0",
         "zod": "3.22.4"
     },

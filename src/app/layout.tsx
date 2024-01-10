@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { stripIndent } from 'common-tags'
 import { headers } from 'next/headers'
@@ -10,6 +10,15 @@ import './legacy.css'
 export const metadata: Metadata = {
     title: { default: 'krd.dev', template: '%s — krd.dev' },
     metadataBase: new URL('https://krd.dev'),
+}
+
+export const viewport: Viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    minimumScale: 1,
+    userScalable: false,
+    viewportFit: 'cover',
 }
 
 export default function RootLayout({

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Link from 'next/link'
-import { Suspense } from 'react'
 
 export default function MainLayout({
     children,
@@ -9,7 +8,7 @@ export default function MainLayout({
 }) {
     return (
         <div className="min-h-screen bg-white flex flex-col">
-            <header className="bg-indigo-600">
+            <header className="bg-indigo-600 p-safe">
                 <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
                         <div className="flex items-center">
@@ -39,10 +38,8 @@ export default function MainLayout({
                     </div>
                 </nav>
             </header>
-            <div className="my-12 flex-grow">
-                <Suspense>{children}</Suspense>
-            </div>
-            <footer className="bg-white">
+            <div className="my-12 flex-grow p-safe">{children}</div>
+            <footer className="bg-white p-safe">
                 <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
                     <div className="flex justify-center space-x-6 md:order-2">
                         {externalLinks.map((item) => (

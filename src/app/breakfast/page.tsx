@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
     return (
-        <div className={clsx('relative h-screen overflow-hidden')}>
+        <div className={clsx('relative min-h-screen-safe overflow-x-hidden')}>
             <div
                 className={clsx(
                     'max-w-full 2xl:max-w-screen-2xl 2xl:mx-auto relative z-30 flex flex-col justify-items-start'
