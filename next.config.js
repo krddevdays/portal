@@ -26,7 +26,6 @@ const nextConfig = {
     assetPrefix: process.env.ASSET_PREFIX,
     reactStrictMode: true,
     poweredByHeader: false,
-    productionBrowserSourceMaps: false,
     experimental: {
         typedRoutes: true,
     },
