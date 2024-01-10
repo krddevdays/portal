@@ -44,5 +44,6 @@ module.exports = withSentryConfig(
         widenClientFileUpload: true,
         hideSourceMaps: true,
         disableLogger: true,
+        tunnelRoute: '/monitoring-tunnel',
     }
 )

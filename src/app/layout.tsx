@@ -2,10 +2,13 @@ import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { stripIndent } from 'common-tags'
 import { headers } from 'next/headers'
-import { Providers } from './providers'
 
 import './globals.css'
 import './legacy.css'
+
+import { Toaster } from '@/components/ui/sonner.tsx'
+
+import { Providers } from './providers'
 
 export const metadata: Metadata = {
     title: { default: 'krd.dev', template: '%s — krd.dev' },
@@ -94,6 +97,7 @@ export default function RootLayout({
                     </div>
                 </noscript>
                 <Providers>{children}</Providers>
+                <Toaster richColors closeButton />
             </body>
         </html>
     )

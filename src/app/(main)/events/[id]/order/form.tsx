@@ -6,6 +6,7 @@ import {
     FieldPathByValue,
 } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import * as Sentry from '@sentry/nextjs'
 
 import { EventTicketPayment, EventTicketsType } from '@/api/qtickets.ts'
 import {
@@ -43,6 +44,7 @@ import clsx from 'clsx'
 import { MaskedInput } from '@/components/MaskedInput'
 import { phoneMaskOptions } from '@/lib/phone-mask'
 import { Loader2 } from 'lucide-react'
+import { toast } from 'sonner'
 
 function RequesterForm({
     onSubmit,
@@ -171,7 +173,9 @@ function TicketField({
             <FormField
                 control={control}
                 name={`${name}.type`}
-                render={({ field: { value, onChange, ...field } }) => (
+                render={({
+                    field: { value, onChange, ref: _ref, ...field },
+                }) => (
                     <FormItem>
                         <Select
                             onValueChange={onChange}
@@ -338,7 +342,7 @@ function PaymentForm({
                     name="type"
                     render={({
                         formState,
-                        field: { value, onChange, ...field },
+                        field: { value, onChange, ref: _ref, ...field },
                     }) => {
                         const payment = payments.find(
                             (payment) => payment.type.toString() == value
@@ -516,29 +520,44 @@ export function OrderForm(props: OrderFormProps) {
         <PaymentForm
             payments={props.payments}
             onSubmit={async (payment) => {
-                const order = await createOrder(props.eventId, {
+                console.log({
                     requester,
                     tickets,
                     payment,
                 })
+                try {
+                    const order = await createOrder(props.eventId, {
+                        requester,
+                        tickets,
+                        payment,
+                    })
 
-                setOrder(order)
+                    setOrder(order)
 
-                const params = {
-                    event_id: props.eventId,
-                    order_id: order.id,
-                    currency: order.currency,
-                    order_price: order.price,
+                    const params = {
+                        event_id: props.eventId,
+                        order_id: order.id,
+                        currency: order.currency,
+                        order_price: order.price,
+                    }
+
+                    ym(53951545, 'reachGoal', 'event_order_success', params)
+
+                    _tmr.push({
+                        type: 'reachGoal',
+                        goal: 'event_order_success',
+                        value: order.price,
+                        params,
+                    })
+                } catch (e) {
+                    console.log(e)
+                    Sentry.captureException(e)
+                    toast.error('Упс, ошибка :-(', {
+                        description: 'Что-то пошло не так, попробуйте еще раз',
+                        dismissible: true,
+                        duration: 60000,
+                    })
                 }
-
-                ym(53951545, 'reachGoal', 'event_order_success', params)
-
-                _tmr.push({
-                    type: 'reachGoal',
-                    goal: 'event_order_success',
-                    value: order.price,
-                    params,
-                })
             }}
         />
     )
