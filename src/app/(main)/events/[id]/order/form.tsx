@@ -520,11 +520,6 @@ export function OrderForm(props: OrderFormProps) {
         <PaymentForm
             payments={props.payments}
             onSubmit={async (payment) => {
-                console.log({
-                    requester,
-                    tickets,
-                    payment,
-                })
                 try {
                     const order = await createOrder(props.eventId, {
                         requester,
@@ -550,7 +545,6 @@ export function OrderForm(props: OrderFormProps) {
                         params,
                     })
                 } catch (e) {
-                    console.log(e)
                     Sentry.captureException(e)
                     toast.error('Упс, ошибка :-(', {
                         description: 'Что-то пошло не так, попробуйте еще раз',
