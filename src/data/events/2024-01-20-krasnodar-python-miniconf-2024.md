@@ -54,6 +54,18 @@ activities:
               last_name: Корнилков
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/anton-kornilkov.jpg
               work: Вымпелком
+    - type: TALK
+      thing:
+          title: ASGI - Вчера. Сегодня. ...?
+          description: |
+              Мир Python отчаянно движется в сторону асинхронщины.
+              Прошло всего 10 лет с выпуска asyncio, но у нас уже десяток фреймворков и несколько серверов приложений.  
+              Большинство из них так или иначе реализуют стандарт ASGI - о нём как раз и поговорим. Чем он отличается от WSGI, зачем нужен и какие сложности привносит.
+          speaker:
+              first_name: Михаил
+              last_name: Дьяченко
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/programishka.jpg
+              work: SimbirSoft
 ---
 
 [Krasnodar Python](https://t.me/pythonkrd) — это сообщество Python разработчиков самого широкого направления: от веб фреймворков и тестирования до ML и AI, которое существует с 2018 года. Цель сообщества формировать офлайн и онлайн среду, где специалисты могут делиться опытом, помогать друг другу и просто хорошо проводить время в компании коллег.
