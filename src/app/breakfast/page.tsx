@@ -7,6 +7,8 @@ import calendarImage from './calendar.svg'
 import locationImage from './location.svg'
 import { Metadata } from 'next'
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
     title: {
         absolute: 'krd.dev/breakfast',

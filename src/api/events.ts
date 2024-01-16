@@ -3,6 +3,7 @@ import path from 'path'
 import * as fs from 'fs'
 import matter from 'gray-matter'
 import { z } from 'zod'
+import { cache } from 'react'
 
 const speakerSchema = z.object({
     first_name: z.string(),
@@ -140,25 +141,29 @@ const schema = z.object({
     image_facebook: z.string().optional(),
     venue: venueSchema,
     activities: activitiesSchema.default([]),
+    created_at: z.date(),
+    modified_at: z.date(),
 })
 
 export type EventResponse = z.infer<typeof schema>
 
 const eventsDirectory = path.join(process.cwd(), '/src/data/events')
 
-export async function getEvent(id: string): Promise<EventResponse | null> {
+export const getEvent = cache(async function (
+    id: string
+): Promise<EventResponse | null> {
     return (
         (await getEvents()).find(
             (event) => event.legacy_id?.toString() === id
         ) || null
     )
-}
+})
 
 type EventsResponse = Array<EventResponse>
 
 let events: null | EventsResponse = null
 
-export async function getEvents(): Promise<EventsResponse> {
+export const getEvents = cache(async function (): Promise<EventsResponse> {
     if (events !== null) return events
 
     const fileNames = fs.readdirSync(eventsDirectory)
@@ -167,12 +172,15 @@ export async function getEvents(): Promise<EventsResponse> {
         .map((fileName) => {
             const fullPath = path.join(eventsDirectory, fileName)
             const fileContents = fs.readFileSync(fullPath, 'utf8')
+            const fileStat = fs.statSync(fullPath)
 
             const matterResult = matter(fileContents)
 
             return schema.parse({
                 ...matterResult.data,
                 full_description: matterResult.content,
+                created_at: fileStat.ctime,
+                modified_at: fileStat.mtime,
             })
         })
         .sort(
@@ -180,4 +188,4 @@ export async function getEvents(): Promise<EventsResponse> {
                 new Date(b.start_date).getTime() -
                 new Date(a.start_date).getTime()
         ))
-}
+})

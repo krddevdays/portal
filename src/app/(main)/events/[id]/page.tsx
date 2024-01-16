@@ -1,4 +1,9 @@
-import { getEvent, isActivityTalk, isScheduleActivity } from '@/api/events'
+import {
+    getEvent,
+    getEvents,
+    isActivityTalk,
+    isScheduleActivity,
+} from '@/api/events'
 import { notFound } from 'next/navigation'
 import { getTickets } from '@/api/qtickets'
 import Image from 'next/image'
@@ -24,6 +29,12 @@ import { Skeleton } from '@/components/ui/skeleton.tsx'
 
 type Props = {
     params: { id: string }
+}
+
+export async function generateStaticParams() {
+    const events = await getEvents()
+
+    return events.map((event) => ({ id: event.legacy_id.toString() }))
 }
 
 export default async function Page({ params }: Props) {
