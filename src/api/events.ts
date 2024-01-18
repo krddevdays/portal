@@ -3,7 +3,6 @@ import path from 'path'
 import * as fs from 'fs'
 import matter from 'gray-matter'
 import { z } from 'zod'
-import { cache } from 'react'
 
 const speakerSchema = z.object({
     first_name: z.string(),
@@ -149,21 +148,19 @@ export type EventResponse = z.infer<typeof schema>
 
 const eventsDirectory = path.join(process.cwd(), '/src/data/events')
 
-export const getEvent = cache(async function (
-    id: string
-): Promise<EventResponse | null> {
+export async function getEvent(id: string): Promise<EventResponse | null> {
     return (
         (await getEvents()).find(
             (event) => event.legacy_id?.toString() === id
         ) || null
     )
-})
+}
 
 type EventsResponse = Array<EventResponse>
 
 let events: null | EventsResponse = null
 
-export const getEvents = cache(async function (): Promise<EventsResponse> {
+export async function getEvents(): Promise<EventsResponse> {
     if (events !== null) return events
 
     const fileNames = fs.readdirSync(eventsDirectory)
@@ -188,4 +185,4 @@ export const getEvents = cache(async function (): Promise<EventsResponse> {
                 new Date(b.start_date).getTime() -
                 new Date(a.start_date).getTime()
         ))
-})
+}
