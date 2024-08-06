@@ -40,6 +40,17 @@ activities:
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/vladimir-romanichev.jpg
               work: Ветменеджер
               position: Руководитель отдела разработки
+    - type: TALK
+      thing:
+          title: 'Введение в нейронные сети'
+          description: |
+              Поговорим о нейронных сетях, рассмотрим общие принципы их функционирования, напишем простейший классификатор картинок, рассмотрим существующие решения задач цифрового зрения.
+          speaker:
+              first_name: Арсений
+              last_name: Жук
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/zhuk-arsenij.jpg
+              work: Атлас Консалтинг
+              position: Руководитель направления
 ---
 
 [Krasnodar Backend](https://t.me/krdbackend) — это сообщество разработчиков серверных приложений, которое существует с 2017 года. Цель сообщества формировать офлайн и онлайн среду, где специалисты могут делиться опытом, помогать друг другу и просто хорошо проводить время в компании коллег.
