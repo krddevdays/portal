@@ -51,6 +51,17 @@ activities:
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/zhuk-arsenij.jpg
               work: Атлас Консалтинг
               position: Руководитель направления
+    - type: TALK
+      thing:
+          title: 'Как раздавать терабайты контента и выжить'
+          description: |
+              Как небольшой команде удалось создать популярный медиа-сервис. В докладе упомянем общую архитектуру сервиса, собственные грабли и процесс бесшовной миграции.
+          speaker:
+              first_name: Вячеслав
+              last_name: Маслов
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/maslov-slava.jpg
+              work: manga.ovh
+              position: Системный администратор
 ---
 
 [Krasnodar Backend](https://t.me/krdbackend) — это сообщество разработчиков серверных приложений, которое существует с 2017 года. Цель сообщества формировать офлайн и онлайн среду, где специалисты могут делиться опытом, помогать друг другу и просто хорошо проводить время в компании коллег.
