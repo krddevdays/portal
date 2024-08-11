@@ -46,6 +46,7 @@ export default async function Page({ params }: Props) {
     const talks = event.activities
         .filter(isActivityTalk)
         .map((activity) => activity.thing)
+        .filter((talk) => talk !== null)
     const activities = event.activities.filter(isScheduleActivity)
 
     return (

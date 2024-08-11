@@ -27,7 +27,7 @@ const activityTalkSchema = z.object({
     start_date: z.string().optional(),
     finish_date: z.string().optional(),
     zone: z.string().optional(),
-    thing: talkSchema,
+    thing: talkSchema.nullable(),
 })
 
 type ActivityTalk = z.infer<typeof activityTalkSchema>

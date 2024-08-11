@@ -15,7 +15,71 @@ venue:
     address: Краснодар, ул. Северная, 405
     latitude: 45.037499
     longitude: 38.995776
+    zones:
+        - name: Большой зал
 activities:
+    - type: WELCOME
+      thing:
+          title: Открытие
+      zone: Большой зал
+      start_date: '2024-08-17T12:10:00+03:00'
+      finish_date: '2024-08-17T12:20:00+03:00'
+    - type: TALK
+      zone: Большой зал
+      start_date: '2024-08-17T12:20:00+03:00'
+      finish_date: '2024-08-17T13:00:00+03:00'
+      thing: null
+    - type: COFFEE
+      thing:
+          title: Кофе-брейк
+      zone: Большой зал
+      start_date: '2024-08-17T13:00:00+03:00'
+      finish_date: '2024-08-17T13:20:00+03:00'
+    - type: TALK
+      zone: Большой зал
+      start_date: '2024-08-17T13:20:00+03:00'
+      finish_date: '2024-08-17T14:00:00+03:00'
+      thing: null
+    - type: COFFEE
+      thing:
+          title: Кофе-брейк
+      zone: Большой зал
+      start_date: '2024-08-17T14:00:00+03:00'
+      finish_date: '2024-08-17T14:20:00+03:00'
+    - type: TALK
+      zone: Большой зал
+      start_date: '2024-08-17T14:20:00+03:00'
+      finish_date: '2024-08-17T15:00:00+03:00'
+      thing: null
+    - type: COFFEE
+      thing:
+          title: Кофе-брейк
+      zone: Большой зал
+      start_date: '2024-08-17T15:00:00+03:00'
+      finish_date: '2024-08-17T15:20:00+03:00'
+    - type: TALK
+      zone: Большой зал
+      start_date: '2024-08-17T15:20:00+03:00'
+      finish_date: '2024-08-17T16:00:00+03:00'
+      thing: null
+    - type: COFFEE
+      thing:
+          title: Кофе-брейк
+      zone: Большой зал
+      start_date: '2024-08-17T16:00:00+03:00'
+      finish_date: '2024-08-17T16:20:00+03:00'
+    - type: TALK
+      zone: Большой зал
+      start_date: '2024-08-17T16:20:00+03:00'
+      finish_date: '2024-08-17T17:00:00+03:00'
+      thing: null
+    - type: CLOSE
+      thing:
+          title: Закрытие
+      zone: Большой зал
+      start_date: '2024-08-17T17:00:00+03:00'
+      finish_date: '2024-08-17T17:00:00+03:00'
+
     - type: TALK
       thing:
           title: 'Как оптимизировать производительность Camunda и не сойти с ума'
