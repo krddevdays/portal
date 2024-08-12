@@ -28,6 +28,7 @@ const nextConfig = {
     poweredByHeader: false,
     experimental: {
         typedRoutes: true,
+        instrumentationHook: true,
     },
 }
 
