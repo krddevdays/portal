@@ -527,6 +527,50 @@ export function OrderForm(props: OrderFormProps) {
                         payment,
                     })
 
+                    if (order.status === 'error') {
+                        switch (order.code) {
+                            case 'not_payed_limit':
+                                toast.warning(
+                                    'Невозможно оформить новую бронь',
+                                    {
+                                        description:
+                                            'Оплатите или отмените действующее бронирование.',
+                                        dismissible: true,
+                                        action: {
+                                            label: 'Оплатить',
+                                            onClick: () => {
+                                                window.location.href =
+                                                    order.payment_url
+                                            },
+                                        },
+                                        cancel: {
+                                            label: 'Отменить',
+                                            onClick: () => {
+                                                window.location.href =
+                                                    order.cancel_url
+                                            },
+                                        },
+                                    }
+                                )
+                                break
+                            default:
+                                Sentry.captureException(
+                                    new Error(
+                                        `Unknown order error: ${order.code}`
+                                    )
+                                )
+                                toast.error('Упс, ошибка :-(', {
+                                    description:
+                                        'Что-то пошло не так, попробуйте еще раз',
+                                    dismissible: true,
+                                    duration: 60000,
+                                })
+                                return order.code satisfies never
+                        }
+
+                        return
+                    }
+
                     setOrder(order)
 
                     const params = {

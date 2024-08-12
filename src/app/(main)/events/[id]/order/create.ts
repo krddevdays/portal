@@ -9,7 +9,12 @@ import {
 import { z } from 'zod'
 import { headers } from 'next/headers'
 import { getEvent } from '@/api/events.ts'
-import { EventTicketsType, getTickets, qticketsApi } from '@/api/qtickets.ts'
+import {
+    EventTicketsType,
+    getTickets,
+    qticketsApi,
+    ShowNotPayedLimitError,
+} from '@/api/qtickets.ts'
 import { notFound } from 'next/navigation'
 import * as Sentry from '@sentry/nextjs'
 
@@ -24,13 +29,22 @@ type CreateOrderSchema = z.infer<typeof createOrderSchema>
 export async function createOrder(
     eventId: string,
     data: CreateOrderSchema
-): Promise<{
-    id: number
-    paymentUrl: string
-    reservedTo: string
-    price: number
-    currency: string
-}> {
+): Promise<
+    | {
+          status: 'success'
+          id: number
+          paymentUrl: string
+          reservedTo: string
+          price: number
+          currency: string
+      }
+    | {
+          status: 'error'
+          code: 'not_payed_limit'
+          payment_url: string
+          cancel_url: string
+      }
+> {
     return Sentry.withServerActionInstrumentation(
         'createOrder',
         {
@@ -155,6 +169,7 @@ export async function createOrder(
                     }>()
 
                 return {
+                    status: 'success' as const,
                     id: result.data.id,
                     paymentUrl: result.data.payment_url,
                     reservedTo: result.data.reserved_to,
@@ -162,7 +177,16 @@ export async function createOrder(
                     currency: result.data.currency_id,
                 }
             } catch (e) {
-                throw new Error('Неизвестная ошибка', { cause: e })
+                if (e instanceof ShowNotPayedLimitError) {
+                    return {
+                        status: 'error' as const,
+                        code: 'not_payed_limit' as const,
+                        payment_url: e.payment_url,
+                        cancel_url: e.cancel_url,
+                    }
+                }
+
+                throw e
             }
         }
     )

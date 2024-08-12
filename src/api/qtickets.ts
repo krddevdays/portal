@@ -4,11 +4,40 @@ import wretch from 'wretch'
 import QueryStringAddon from 'wretch/addons/queryString'
 import { dedupe } from 'wretch/middlewares/dedupe'
 
+export class ShowNotPayedLimitError extends Error {
+    public readonly payment_url: string
+    public readonly cancel_url: string
+
+    constructor({
+        payment_url,
+        cancel_url,
+    }: {
+        payment_url: string
+        cancel_url: string
+        cause?: Error
+    }) {
+        super('SHOW_NOT_PAYED_LIMIT')
+        this.payment_url = payment_url
+        this.cancel_url = cancel_url
+    }
+}
+
 const externalApi = wretch('https://qtickets.ru/api/rest/v1')
     .middlewares([dedupe()])
     .addon(QueryStringAddon)
     .auth(`Bearer ${process.env.QTICKETS_TOKEN}`)
     .catcherFallback((e) => {
+        if (e.json && e.json.code) {
+            switch (e.json.code) {
+                case 'SHOW_NOT_PAYED_LIMIT':
+                    throw new ShowNotPayedLimitError({
+                        payment_url: e.json.info.payment_url,
+                        cancel_url: e.json.info.cancel_url,
+                        cause: e,
+                    })
+            }
+        }
+
         throw new Error('Неизвестная ошибка', { cause: e })
     })
 
