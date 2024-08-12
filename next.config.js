@@ -35,14 +35,9 @@ const nextConfig = {
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withSentryConfig } = require('@sentry/nextjs')
 
-module.exports = withSentryConfig(
-    nextConfig,
-    {
-        silent: true,
-    },
-    {
-        widenClientFileUpload: true,
-        hideSourceMaps: true,
-        disableLogger: true,
-    }
-)
+module.exports = withSentryConfig(nextConfig, {
+    silent: true,
+    hideSourceMaps: true,
+    widenClientFileUpload: true,
+    disableLogger: true,
+})
