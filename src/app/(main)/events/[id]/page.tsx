@@ -400,22 +400,30 @@ async function EventPrice(props: EventPriceProps) {
                     ))}
                 </div>
                 {tickets.is_active ? (
-                    <div className={styles.eventPriceButton}>
-                        <Link
-                            href={`/events/${props.eventId}/order`}
-                            className={buttonVariants()}
-                        >
-                            Зарегистрироваться
-                        </Link>
-                        <p className={styles.eventPriceButton__description}>
-                            Регистрация открыта до{' '}
-                            <FormattedDate
-                                value={tickets.sale_finish_date}
-                                month="long"
-                                day="numeric"
-                            />
-                        </p>
-                    </div>
+                    tickets.types.some((type) => type.free_quantity) ? (
+                        <div className={styles.eventPriceButton}>
+                            <Link
+                                href={`/events/${props.eventId}/order`}
+                                className={buttonVariants()}
+                            >
+                                Зарегистрироваться
+                            </Link>
+                            <p className={styles.eventPriceButton__description}>
+                                Регистрация открыта до{' '}
+                                <FormattedDate
+                                    value={tickets.sale_finish_date}
+                                    month="long"
+                                    day="numeric"
+                                />
+                            </p>
+                        </div>
+                    ) : (
+                        <div className={styles.eventPriceButton}>
+                            <p className={styles.eventPriceButton__description}>
+                                Билеты закончились :-(
+                            </p>
+                        </div>
+                    )
                 ) : (
                     <div className={styles.eventPriceButton}>
                         <p className={styles.eventPriceButton__description}>
