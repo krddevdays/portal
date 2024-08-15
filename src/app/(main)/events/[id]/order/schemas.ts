@@ -40,7 +40,26 @@ export type TicketSchema = z.infer<typeof ticketSchema>
 export const ticketsSchema = z.object({
     items: z
         .array(ticketSchema)
-        .min(1, 'Добавить как минимум одного участника'),
+        .min(1, 'Добавить как минимум одного участника')
+        .superRefine((items, ctx) => {
+            items.forEach((item, index) => {
+                const email = item.email
+                if (!email) return
+
+                const otherEmails = items
+                    .filter((otherItem, otherIndex) => otherIndex !== index)
+                    .map((otherItem) => otherItem.email)
+
+                if (otherEmails.includes(email)) {
+                    ctx.addIssue({
+                        path: [index, 'email'],
+                        message:
+                            'У каждого участника должна быть уникальная почта',
+                        code: 'custom',
+                    })
+                }
+            })
+        }),
 })
 
 export type TicketsSchema = z.infer<typeof ticketsSchema>
