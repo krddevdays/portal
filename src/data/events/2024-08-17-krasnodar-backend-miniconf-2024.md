@@ -28,7 +28,16 @@ activities:
       zone: Большой зал
       start_date: '2024-08-17T12:20:00+03:00'
       finish_date: '2024-08-17T13:00:00+03:00'
-      thing: null
+      thing:
+          title: 'Введение в нейронные сети'
+          description: |
+              Поговорим о нейронных сетях, рассмотрим общие принципы их функционирования, напишем простейший классификатор картинок, рассмотрим существующие решения задач цифрового зрения.
+          speaker:
+              first_name: Арсений
+              last_name: Жук
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/zhuk-arsenij.jpg
+              work: Атлас Консалтинг
+              position: Руководитель направления
     - type: COFFEE
       thing:
           title: Кофе-брейк
@@ -39,60 +48,6 @@ activities:
       zone: Большой зал
       start_date: '2024-08-17T13:20:00+03:00'
       finish_date: '2024-08-17T14:00:00+03:00'
-      thing: null
-    - type: COFFEE
-      thing:
-          title: Кофе-брейк
-      zone: Большой зал
-      start_date: '2024-08-17T14:00:00+03:00'
-      finish_date: '2024-08-17T14:20:00+03:00'
-    - type: TALK
-      zone: Большой зал
-      start_date: '2024-08-17T14:20:00+03:00'
-      finish_date: '2024-08-17T15:00:00+03:00'
-      thing: null
-    - type: COFFEE
-      thing:
-          title: Кофе-брейк
-      zone: Большой зал
-      start_date: '2024-08-17T15:00:00+03:00'
-      finish_date: '2024-08-17T15:20:00+03:00'
-    - type: TALK
-      zone: Большой зал
-      start_date: '2024-08-17T15:20:00+03:00'
-      finish_date: '2024-08-17T16:00:00+03:00'
-      thing: null
-    - type: COFFEE
-      thing:
-          title: Кофе-брейк
-      zone: Большой зал
-      start_date: '2024-08-17T16:00:00+03:00'
-      finish_date: '2024-08-17T16:20:00+03:00'
-    - type: TALK
-      zone: Большой зал
-      start_date: '2024-08-17T16:20:00+03:00'
-      finish_date: '2024-08-17T17:00:00+03:00'
-      thing: null
-    - type: CLOSE
-      thing:
-          title: Закрытие
-      zone: Большой зал
-      start_date: '2024-08-17T17:00:00+03:00'
-      finish_date: '2024-08-17T17:00:00+03:00'
-
-    - type: TALK
-      thing:
-          title: 'Как оптимизировать производительность Camunda и не сойти с ума'
-          description: |
-              Ознакомимся с нотацией BPMN и рассмотрим один из самых популярных инструментов для работы с ней - Camunda.  
-              Поговорим о подводных камнях производительности данной системы, способах её оптимизации и ускорения, а также о методике нагрузочного тестирования данного продукта.
-          speaker:
-              first_name: Никита
-              last_name: Канюков
-              avatar: https://storage.yandexcloud.net/krddev-content/speakers/kanukov-nikita.jpg
-              work: SimbirSoft
-              position: Инженер по исследованию производительности
-    - type: TALK
       thing:
           title: 'Какие автотесты нужны твоему легаси проекту?'
           description: |
@@ -104,18 +59,60 @@ activities:
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/vladimir-romanichev.jpg
               work: Ветменеджер
               position: Руководитель отдела разработки
-    - type: TALK
+    - type: COFFEE
       thing:
-          title: 'Введение в нейронные сети'
-          description: |
-              Поговорим о нейронных сетях, рассмотрим общие принципы их функционирования, напишем простейший классификатор картинок, рассмотрим существующие решения задач цифрового зрения.
-          speaker:
-              first_name: Арсений
-              last_name: Жук
-              avatar: https://storage.yandexcloud.net/krddev-content/speakers/zhuk-arsenij.jpg
-              work: Атлас Консалтинг
-              position: Руководитель направления
+          title: Кофе-брейк
+      zone: Большой зал
+      start_date: '2024-08-17T14:00:00+03:00'
+      finish_date: '2024-08-17T14:20:00+03:00'
     - type: TALK
+      zone: Большой зал
+      start_date: '2024-08-17T14:20:00+03:00'
+      finish_date: '2024-08-17T15:00:00+03:00'
+      thing:
+          title: 'OpenTelemetry: как увидеть микросервисы насквозь'
+          description: |
+              Современный backend из десятков микросервисов — опасная вещь. Как быстро выяснить что пошло не так? Что нужно сделать чтобы глубже разобраться в проблеме?  
+
+              В докладе пойдёт речь о трассировке, которая может помочь дать ответы на эти вопросы в экстренной ситуации.  
+              Вы узнаете о том что такое трассировка, как это выглядит, что даёт OpenTelemetry и как он упрощает жизнь при поиске дефектов
+          speaker:
+              first_name: Андрей
+              last_name: Покусаев
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/andrei-pokusaev.jpg
+              work: Ростелеком ИТ
+              position: Главный разработчик
+    - type: COFFEE
+      thing:
+          title: Кофе-брейк
+      zone: Большой зал
+      start_date: '2024-08-17T15:00:00+03:00'
+      finish_date: '2024-08-17T15:20:00+03:00'
+    - type: TALK
+      zone: Большой зал
+      start_date: '2024-08-17T15:20:00+03:00'
+      finish_date: '2024-08-17T16:00:00+03:00'
+      thing:
+          title: 'Как оптимизировать производительность Camunda и не сойти с ума'
+          description: |
+              Ознакомимся с нотацией BPMN и рассмотрим один из самых популярных инструментов для работы с ней - Camunda.  
+              Поговорим о подводных камнях производительности данной системы, способах её оптимизации и ускорения, а также о методике нагрузочного тестирования данного продукта.
+          speaker:
+              first_name: Никита
+              last_name: Канюков
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/kanukov-nikita.jpg
+              work: SimbirSoft
+              position: Инженер по исследованию производительности
+    - type: COFFEE
+      thing:
+          title: Кофе-брейк
+      zone: Большой зал
+      start_date: '2024-08-17T16:00:00+03:00'
+      finish_date: '2024-08-17T16:20:00+03:00'
+    - type: TALK
+      zone: Большой зал
+      start_date: '2024-08-17T16:20:00+03:00'
+      finish_date: '2024-08-17T17:00:00+03:00'
       thing:
           title: 'Как раздавать терабайты контента и выжить'
           description: |
@@ -134,20 +131,12 @@ activities:
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/maslov-slava.jpg
               work: manga.ovh
               position: Системный администратор
-    - type: TALK
+    - type: CLOSE
       thing:
-          title: 'OpenTelemetry: как увидеть микросервисы насквозь'
-          description: |
-              Современный backend из десятков микросервисов — опасная вещь. Как быстро выяснить что пошло не так? Что нужно сделать чтобы глубже разобраться в проблеме?  
-
-              В докладе пойдёт речь о трассировке, которая может помочь дать ответы на эти вопросы в экстренной ситуации.  
-              Вы узнаете о том что такое трассировка, как это выглядит, что даёт OpenTelemetry и как он упрощает жизнь при поиске дефектов
-          speaker:
-              first_name: Андрей
-              last_name: Покусаев
-              avatar: https://storage.yandexcloud.net/krddev-content/speakers/andrei-pokusaev.jpg
-              work: Ростелеком ИТ
-              position: Главный разработчик
+          title: Закрытие
+      zone: Большой зал
+      start_date: '2024-08-17T17:00:00+03:00'
+      finish_date: '2024-08-17T17:00:00+03:00'
 ---
 
 [Krasnodar Backend](https://t.me/krdbackend) — это сообщество разработчиков серверных приложений, которое существует с 2017 года. Цель сообщества формировать офлайн и онлайн среду, где специалисты могут делиться опытом, помогать друг другу и просто хорошо проводить время в компании коллег.
