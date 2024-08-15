@@ -54,22 +54,20 @@ export async function createOrder(
             const event = await getEvent(eventId)
 
             if (!event || !event.qtickets_id) {
-                // TODO
                 notFound()
             }
 
             const tickets = await getTickets(event.qtickets_id)
 
             if (!tickets) {
-                // TODO
                 notFound()
             }
 
             const order = createOrderSchema.safeParse(data)
 
             if (!order.success) {
-                // TODO
-                notFound()
+                // TODO: add client handling
+                throw new Error('Invalid order data')
             }
 
             const payment = tickets.payments.find(
@@ -77,8 +75,8 @@ export async function createOrder(
             )
 
             if (!payment) {
-                // TODO
-                notFound()
+                // TODO: add client handling
+                throw new Error('Payment method not found')
             }
 
             const requestBody = {
