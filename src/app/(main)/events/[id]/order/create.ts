@@ -1,18 +1,13 @@
 'use server'
 
-import {
-    paymentSchema,
-    requesterSchema,
-    TicketSchema,
-    ticketsSchema,
-} from './schemas.ts'
+import { paymentSchema, requesterSchema, ticketsSchema } from './schemas.ts'
 import { z } from 'zod'
 import { headers } from 'next/headers'
 import { getEvent } from '@/api/events.ts'
 import {
-    EventTicketsType,
     getTickets,
     qticketsApi,
+    SeatNotAvailableError,
     ShowNotPayedLimitError,
 } from '@/api/qtickets.ts'
 import { notFound } from 'next/navigation'
@@ -44,6 +39,10 @@ export async function createOrder(
           payment_url: string
           cancel_url: string
       }
+    | {
+          status: 'error'
+          code: 'seat_not_available'
+      }
 > {
     return Sentry.withServerActionInstrumentation(
         'createOrder',
@@ -61,7 +60,7 @@ export async function createOrder(
 
             const tickets = await getTickets(event.qtickets_id)
 
-            if (!tickets || !tickets.is_active) {
+            if (!tickets) {
                 // TODO
                 notFound()
             }
@@ -80,44 +79,6 @@ export async function createOrder(
             if (!payment) {
                 // TODO
                 notFound()
-            }
-
-            const seatsInfo = tickets.types.reduce<
-                Record<string, EventTicketsType>
-            >((seats, type) => {
-                if (!seats[type.id]) {
-                    seats[type.id] = type
-                }
-
-                return seats
-            }, {})
-
-            const selectedSeatsByType = order.data.tickets.items.reduce<
-                Record<string, TicketSchema[]>
-            >((seats, ticket) => {
-                if (!seats[ticket.type]) {
-                    seats[ticket.type] = []
-                }
-
-                seats[ticket.type].push(ticket)
-
-                return seats
-            }, {})
-
-            for (const ticket of order.data.tickets.items) {
-                const seat = seatsInfo[ticket.type]
-
-                if (!seat || seat.disabled) {
-                    // TODO
-                    notFound()
-                }
-
-                if (
-                    seat.free_quantity < selectedSeatsByType[ticket.type].length
-                ) {
-                    // TODO
-                    notFound()
-                }
             }
 
             const requestBody = {
@@ -183,6 +144,11 @@ export async function createOrder(
                         code: 'not_payed_limit' as const,
                         payment_url: e.payment_url,
                         cancel_url: e.cancel_url,
+                    }
+                } else if (e instanceof SeatNotAvailableError) {
+                    return {
+                        status: 'error' as const,
+                        code: 'seat_not_available' as const,
                     }
                 }
 

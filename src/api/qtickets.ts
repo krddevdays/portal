@@ -22,6 +22,12 @@ export class ShowNotPayedLimitError extends Error {
     }
 }
 
+export class SeatNotAvailableError extends Error {
+    constructor() {
+        super('SEAT_NOT_AVAILABLE')
+    }
+}
+
 const externalApi = wretch('https://qtickets.ru/api/rest/v1')
     .middlewares([dedupe()])
     .addon(QueryStringAddon)
@@ -35,6 +41,8 @@ const externalApi = wretch('https://qtickets.ru/api/rest/v1')
                         cancel_url: e.json.info.cancel_url,
                         cause: e,
                     })
+                case 'SEAT_NOT_AVAILABLE':
+                    throw new SeatNotAvailableError()
             }
         }
 

@@ -553,10 +553,17 @@ export function OrderForm(props: OrderFormProps) {
                                     }
                                 )
                                 break
+                            case 'seat_not_available':
+                                toast.error('Невозможно оформить заказ', {
+                                    description:
+                                        'К сожалению, места закончились',
+                                    dismissible: true,
+                                })
+                                break
                             default:
                                 Sentry.captureException(
                                     new Error(
-                                        `Unknown order error: ${order.code}`
+                                        `Unknown order error: ${JSON.stringify(order)}`
                                     )
                                 )
                                 toast.error('Упс, ошибка :-(', {
@@ -565,7 +572,7 @@ export function OrderForm(props: OrderFormProps) {
                                     dismissible: true,
                                     duration: 60000,
                                 })
-                                return order.code satisfies never
+                                return order satisfies never
                         }
 
                         return
