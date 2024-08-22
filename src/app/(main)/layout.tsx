@@ -45,7 +45,7 @@ export default function MainLayout({
                             href="/talks"
                             className="text-base font-medium text-white hover:text-indigo-50"
                         >
-                            Мероприятия
+                            Доклады
                         </Link>
                     </div>
                 </nav>
