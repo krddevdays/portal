@@ -59,8 +59,6 @@ activities:
       start_date: '2016-12-10T15:35:00+03:00'
       finish_date: '2016-12-10T16:15:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Зал
       start_date: '2016-12-10T11:50:00+03:00'
       finish_date: '2016-12-10T12:00:00+03:00'
@@ -85,8 +83,6 @@ activities:
       start_date: '2016-12-10T17:10:00+03:00'
       finish_date: '2016-12-10T17:50:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Зал
       start_date: '2016-12-10T16:15:00+03:00'
       finish_date: '2016-12-10T16:30:00+03:00'
@@ -127,8 +123,6 @@ activities:
       start_date: '2016-12-10T14:55:00+03:00'
       finish_date: '2016-12-10T15:35:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Зал
       start_date: '2016-12-10T14:00:00+03:00'
       finish_date: '2016-12-10T14:15:00+03:00'

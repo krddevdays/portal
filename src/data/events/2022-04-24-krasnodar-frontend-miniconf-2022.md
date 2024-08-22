@@ -32,8 +32,6 @@ activities:
       start_date: '2022-04-24T14:20:00+03:00'
       finish_date: '2022-04-24T15:00:00+03:00'
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Большой зал
       start_date: '2022-04-24T16:00:00+03:00'
       finish_date: '2022-04-24T16:00:00+03:00'
@@ -62,26 +60,18 @@ activities:
       start_date: '2022-04-24T13:20:00+03:00'
       finish_date: '2022-04-24T14:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2022-04-24T15:00:00+03:00'
       finish_date: '2022-04-24T15:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2022-04-24T13:00:00+03:00'
       finish_date: '2022-04-24T13:20:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Большой зал
       start_date: '2022-04-24T12:10:00+03:00'
       finish_date: '2022-04-24T12:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2022-04-24T14:00:00+03:00'
       finish_date: '2022-04-24T14:20:00+03:00'

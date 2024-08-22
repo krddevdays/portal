@@ -19,8 +19,6 @@ venue:
         - name: Большой зал
 activities:
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2022-05-21T15:00:00+03:00'
       finish_date: '2022-05-21T15:20:00+03:00'
@@ -38,8 +36,6 @@ activities:
       start_date: '2022-05-21T12:20:00+03:00'
       finish_date: '2022-05-21T13:00:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Большой зал
       start_date: '2022-05-21T12:10:00+03:00'
       finish_date: '2022-05-21T12:20:00+03:00'
@@ -86,8 +82,6 @@ activities:
       start_date: '2022-05-21T16:20:00+03:00'
       finish_date: '2022-05-21T17:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2022-05-21T16:00:00+03:00'
       finish_date: '2022-05-21T16:20:00+03:00'
@@ -105,20 +99,14 @@ activities:
       start_date: '2022-05-21T13:20:00+03:00'
       finish_date: '2022-05-21T14:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2022-05-21T13:00:00+03:00'
       finish_date: '2022-05-21T13:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2022-05-21T14:00:00+03:00'
       finish_date: '2022-05-21T14:20:00+03:00'
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Большой зал
       start_date: '2022-05-21T17:00:00+03:00'
       finish_date: '2022-05-21T17:00:00+03:00'

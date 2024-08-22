@@ -18,8 +18,6 @@ venue:
         - name: Конференц-зал
 activities:
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-11-09T13:00:00+03:00'
       finish_date: '2019-11-09T13:20:00+03:00'
@@ -53,14 +51,10 @@ activities:
       start_date: '2019-11-09T13:20:00+03:00'
       finish_date: '2019-11-09T14:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-11-09T14:00:00+03:00'
       finish_date: '2019-11-09T14:20:00+03:00'
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Конференц-зал
       start_date: '2019-11-09T15:00:00+03:00'
       finish_date: '2019-11-09T15:00:00+03:00'
@@ -81,8 +75,6 @@ activities:
       start_date: '2019-11-09T14:20:00+03:00'
       finish_date: '2019-11-09T15:00:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Конференц-зал
       start_date: '2019-11-09T12:15:00+03:00'
       finish_date: '2019-11-09T12:20:00+03:00'

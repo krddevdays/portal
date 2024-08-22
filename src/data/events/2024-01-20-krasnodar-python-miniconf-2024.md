@@ -19,8 +19,6 @@ venue:
         - name: Большой зал
 activities:
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Большой зал
       start_date: '2024-01-20T12:10:00+03:00'
       finish_date: '2024-01-20T12:20:00+03:00'
@@ -39,8 +37,6 @@ activities:
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/vlad-kuvaitsev.jpg
               work: BestDoctor
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2024-01-20T13:00:00+03:00'
       finish_date: '2024-01-20T13:20:00+03:00'
@@ -60,8 +56,6 @@ activities:
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/programishka.jpg
               work: SimbirSoft
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2024-01-20T14:00:00+03:00'
       finish_date: '2024-01-20T14:20:00+03:00'
@@ -82,8 +76,6 @@ activities:
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/aleksandr-chmelevskii.jpg
               work: Skillbox
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2024-01-20T15:00:00+03:00'
       finish_date: '2024-01-20T15:20:00+03:00'
@@ -103,8 +95,6 @@ activities:
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/anton-kornilkov.jpg
               work: Вымпелком
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2024-01-20T16:00:00+03:00'
       finish_date: '2024-01-20T16:20:00+03:00'
@@ -123,8 +113,6 @@ activities:
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/jurii-chukanov.jpg
               work: Ex. Corp
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Большой зал
       start_date: '2024-01-20T17:00:00+03:00'
       finish_date: '2024-01-20T17:00:00+03:00'

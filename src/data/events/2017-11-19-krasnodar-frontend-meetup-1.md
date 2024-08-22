@@ -48,14 +48,10 @@ activities:
       start_date: '2017-11-19T10:30:00+03:00'
       finish_date: '2017-11-19T11:10:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Лекторий
       start_date: '2017-11-19T13:10:00+03:00'
       finish_date: '2017-11-19T13:20:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Лекторий
       start_date: '2017-11-19T10:20:00+03:00'
       finish_date: '2017-11-19T10:30:00+03:00'
@@ -87,14 +83,10 @@ activities:
       start_date: '2017-11-19T12:30:00+03:00'
       finish_date: '2017-11-19T13:10:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Лекторий
       start_date: '2017-11-19T12:00:00+03:00'
       finish_date: '2017-11-19T12:30:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Лекторий
       start_date: '2017-11-19T11:10:00+03:00'
       finish_date: '2017-11-19T11:20:00+03:00'

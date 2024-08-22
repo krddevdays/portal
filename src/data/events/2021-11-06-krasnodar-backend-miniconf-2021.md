@@ -32,14 +32,10 @@ activities:
       start_date: '2021-11-06T12:20:00+03:00'
       finish_date: '2021-11-06T13:00:00+03:00'
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Большой зал
       start_date: '2021-11-06T17:00:00+03:00'
       finish_date: '2021-11-06T17:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2021-11-06T14:00:00+03:00'
       finish_date: '2021-11-06T14:20:00+03:00'
@@ -57,20 +53,14 @@ activities:
       start_date: '2021-11-06T16:20:00+03:00'
       finish_date: '2021-11-06T17:00:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Большой зал
       start_date: '2021-11-06T12:10:00+03:00'
       finish_date: '2021-11-06T12:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2021-11-06T15:00:00+03:00'
       finish_date: '2021-11-06T15:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2021-11-06T16:00:00+03:00'
       finish_date: '2021-11-06T16:20:00+03:00'
@@ -91,8 +81,6 @@ activities:
       start_date: '2021-11-06T14:20:00+03:00'
       finish_date: '2021-11-06T15:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2021-11-06T13:00:00+03:00'
       finish_date: '2021-11-06T13:20:00+03:00'

@@ -19,8 +19,6 @@ venue:
         - name: Большой зал
 activities:
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Большой зал
       start_date: '2024-08-17T12:10:00+03:00'
       finish_date: '2024-08-17T12:20:00+03:00'
@@ -39,8 +37,6 @@ activities:
               work: Атлас Консалтинг
               position: Руководитель направления
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2024-08-17T13:00:00+03:00'
       finish_date: '2024-08-17T13:20:00+03:00'
@@ -60,8 +56,6 @@ activities:
               work: Ветменеджер
               position: Руководитель отдела разработки
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2024-08-17T14:00:00+03:00'
       finish_date: '2024-08-17T14:20:00+03:00'
@@ -83,8 +77,6 @@ activities:
               work: Ростелеком ИТ
               position: Главный разработчик
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2024-08-17T15:00:00+03:00'
       finish_date: '2024-08-17T15:20:00+03:00'
@@ -104,8 +96,6 @@ activities:
               work: SimbirSoft
               position: Инженер по исследованию производительности
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2024-08-17T16:00:00+03:00'
       finish_date: '2024-08-17T16:20:00+03:00'
@@ -132,8 +122,6 @@ activities:
               work: manga.ovh
               position: Системный администратор
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Большой зал
       start_date: '2024-08-17T17:00:00+03:00'
       finish_date: '2024-08-17T17:00:00+03:00'

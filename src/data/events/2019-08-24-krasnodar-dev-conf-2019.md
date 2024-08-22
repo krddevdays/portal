@@ -20,20 +20,14 @@ venue:
         - name: Переговорная комната «Сира»
 activities:
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Переговорная комната «Сира»
       start_date: '2019-08-24T16:00:00+03:00'
       finish_date: '2019-08-24T17:00:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-25T16:00:00+03:00'
       finish_date: '2019-08-25T17:00:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-24T13:00:00+03:00'
       finish_date: '2019-08-24T14:00:00+03:00'
@@ -53,14 +47,10 @@ activities:
       start_date: '2019-08-24T17:00:00+03:00'
       finish_date: '2019-08-24T18:00:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Переговорная комната «Сира»
       start_date: '2019-08-25T16:00:00+03:00'
       finish_date: '2019-08-25T17:00:00+03:00'
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-24T19:50:00+03:00'
       finish_date: '2019-08-24T20:00:00+03:00'
@@ -118,14 +108,10 @@ activities:
       start_date: '2019-08-25T11:00:00+03:00'
       finish_date: '2019-08-25T12:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-24T13:00:00+03:00'
       finish_date: '2019-08-24T14:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Переговорная комната «Сира»
       start_date: '2019-08-24T16:00:00+03:00'
       finish_date: '2019-08-24T17:00:00+03:00'
@@ -143,8 +129,6 @@ activities:
       start_date: '2019-08-25T17:00:00+03:00'
       finish_date: '2019-08-25T18:00:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-24T10:50:00+03:00'
       finish_date: '2019-08-24T11:00:00+03:00'
@@ -162,8 +146,6 @@ activities:
       start_date: '2019-08-24T12:00:00+03:00'
       finish_date: '2019-08-24T13:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-24T16:00:00+03:00'
       finish_date: '2019-08-24T17:00:00+03:00'
@@ -230,8 +212,6 @@ activities:
       start_date: '2019-08-24T11:00:00+03:00'
       finish_date: '2019-08-24T12:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-25T13:00:00+03:00'
       finish_date: '2019-08-25T14:00:00+03:00'
@@ -254,8 +234,6 @@ activities:
       start_date: '2019-08-25T14:00:00+03:00'
       finish_date: '2019-08-25T15:00:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Переговорная комната «Сира»
       start_date: '2019-08-25T13:00:00+03:00'
       finish_date: '2019-08-25T14:00:00+03:00'
@@ -310,20 +288,14 @@ activities:
       start_date: '2019-08-24T15:00:00+03:00'
       finish_date: '2019-08-24T16:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Переговорная комната «Сира»
       start_date: '2019-08-25T13:00:00+03:00'
       finish_date: '2019-08-25T14:00:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-25T10:50:00+03:00'
       finish_date: '2019-08-25T11:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Переговорная комната «Сира»
       start_date: '2019-08-25T16:00:00+03:00'
       finish_date: '2019-08-25T17:00:00+03:00'
@@ -358,8 +330,6 @@ activities:
       start_date: '2019-08-25T15:00:00+03:00'
       finish_date: '2019-08-25T16:00:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Переговорная комната «Сира»
       start_date: '2019-08-24T13:00:00+03:00'
       finish_date: '2019-08-24T14:00:00+03:00'
@@ -371,14 +341,10 @@ activities:
       start_date: '2019-08-24T18:00:00+03:00'
       finish_date: '2019-08-24T19:00:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-25T13:00:00+03:00'
       finish_date: '2019-08-25T14:00:00+03:00'
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-25T19:50:00+03:00'
       finish_date: '2019-08-25T20:00:00+03:00'
@@ -397,14 +363,10 @@ activities:
       start_date: '2019-08-25T12:00:00+03:00'
       finish_date: '2019-08-25T13:00:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-24T16:00:00+03:00'
       finish_date: '2019-08-24T17:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Переговорная комната «Сира»
       start_date: '2019-08-24T13:00:00+03:00'
       finish_date: '2019-08-24T14:00:00+03:00'
@@ -435,8 +397,6 @@ activities:
       start_date: '2019-08-25T15:00:00+03:00'
       finish_date: '2019-08-25T16:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал «Шардоне»
       start_date: '2019-08-25T16:00:00+03:00'
       finish_date: '2019-08-25T17:00:00+03:00'

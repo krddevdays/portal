@@ -18,14 +18,10 @@ venue:
         - name: Конференц-зал
 activities:
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-12-15T15:00:00+03:00'
       finish_date: '2019-12-15T15:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-12-15T13:00:00+03:00'
       finish_date: '2019-12-15T13:20:00+03:00'
@@ -58,20 +54,14 @@ activities:
       start_date: '2019-12-15T15:20:00+03:00'
       finish_date: '2019-12-15T16:00:00+03:00'
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Конференц-зал
       start_date: '2019-12-15T16:00:00+03:00'
       finish_date: '2019-12-15T16:00:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Конференц-зал
       start_date: '2019-12-15T11:10:00+03:00'
       finish_date: '2019-12-15T11:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-12-15T14:00:00+03:00'
       finish_date: '2019-12-15T14:20:00+03:00'
@@ -100,8 +90,6 @@ activities:
       start_date: '2019-12-15T12:20:00+03:00'
       finish_date: '2019-12-15T13:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-12-15T12:00:00+03:00'
       finish_date: '2019-12-15T12:20:00+03:00'

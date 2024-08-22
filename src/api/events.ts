@@ -58,9 +58,6 @@ const activityWelcomeSchema = z.object({
     start_date: z.string(),
     finish_date: z.string(),
     zone: z.string(),
-    thing: z.object({
-        title: z.string(),
-    }),
 })
 
 const activityCloseSchema = z.object({
@@ -68,9 +65,6 @@ const activityCloseSchema = z.object({
     start_date: z.string(),
     finish_date: z.string(),
     zone: z.string(),
-    thing: z.object({
-        title: z.string(),
-    }),
 })
 
 const activityCoffeeSchema = z.object({
@@ -78,9 +72,6 @@ const activityCoffeeSchema = z.object({
     start_date: z.string(),
     finish_date: z.string(),
     zone: z.string(),
-    thing: z.object({
-        title: z.string(),
-    }),
 })
 
 const activityLunchSchema = z.object({
@@ -88,9 +79,6 @@ const activityLunchSchema = z.object({
     start_date: z.string(),
     finish_date: z.string(),
     zone: z.string(),
-    thing: z.object({
-        title: z.string(),
-    }),
 })
 
 const activitySchema = z.discriminatedUnion('type', [

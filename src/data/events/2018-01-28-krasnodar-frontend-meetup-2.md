@@ -17,8 +17,6 @@ venue:
         - name: Зал
 activities:
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Зал
       start_date: '2018-01-28T11:00:00+03:00'
       finish_date: '2018-01-28T11:20:00+03:00'
@@ -56,8 +54,6 @@ activities:
       start_date: '2018-01-28T11:20:00+03:00'
       finish_date: '2018-01-28T12:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Зал
       start_date: '2018-01-28T13:00:00+03:00'
       finish_date: '2018-01-28T13:20:00+03:00'
@@ -80,14 +76,10 @@ activities:
       start_date: '2018-01-28T10:20:00+03:00'
       finish_date: '2018-01-28T11:00:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Зал
       start_date: '2018-01-28T10:10:00+03:00'
       finish_date: '2018-01-28T10:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Зал
       start_date: '2018-01-28T12:00:00+03:00'
       finish_date: '2018-01-28T12:20:00+03:00'

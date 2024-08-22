@@ -16,8 +16,6 @@ venue:
         - name: Круглый стол
 activities:
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Малый зал
       start_date: '2018-09-15T13:00:00+03:00'
       finish_date: '2018-09-15T13:40:00+03:00'
@@ -33,8 +31,6 @@ activities:
       start_date: '2018-09-15T10:30:00+03:00'
       finish_date: '2018-09-15T11:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Круглый стол
       start_date: '2018-09-15T13:00:00+03:00'
       finish_date: '2018-09-15T13:40:00+03:00'
@@ -61,20 +57,14 @@ activities:
       start_date: '2018-09-15T11:20:00+03:00'
       finish_date: '2018-09-15T12:10:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Круглый стол
       start_date: '2018-09-15T14:30:00+03:00'
       finish_date: '2018-09-15T15:10:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Круглый стол
       start_date: '2018-09-15T13:00:00+03:00'
       finish_date: '2018-09-15T13:40:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2018-09-15T13:00:00+03:00'
       finish_date: '2018-09-15T13:40:00+03:00'
@@ -91,8 +81,6 @@ activities:
       start_date: '2018-09-15T15:10:00+03:00'
       finish_date: '2018-09-15T16:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2018-09-15T14:30:00+03:00'
       finish_date: '2018-09-15T15:10:00+03:00'
@@ -108,8 +96,6 @@ activities:
       start_date: '2018-09-15T12:10:00+03:00'
       finish_date: '2018-09-15T13:00:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Круглый стол
       start_date: '2018-09-15T16:00:00+03:00'
       finish_date: '2018-09-15T16:40:00+03:00'
@@ -155,14 +141,10 @@ activities:
       start_date: '2018-09-15T13:40:00+03:00'
       finish_date: '2018-09-15T14:30:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Большой зал
       start_date: '2018-09-15T14:30:00+03:00'
       finish_date: '2018-09-15T15:10:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Малый зал
       start_date: '2018-09-15T16:00:00+03:00'
       finish_date: '2018-09-15T16:40:00+03:00'
@@ -191,14 +173,10 @@ activities:
       start_date: '2018-09-15T17:30:00+03:00'
       finish_date: '2018-09-15T18:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Круглый стол
       start_date: '2018-09-15T16:00:00+03:00'
       finish_date: '2018-09-15T16:40:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Малый зал
       start_date: '2018-09-15T16:00:00+03:00'
       finish_date: '2018-09-15T16:40:00+03:00'
@@ -213,8 +191,6 @@ activities:
       start_date: '2018-09-15T13:40:00+03:00'
       finish_date: '2018-09-15T14:30:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Большой зал
       start_date: '2018-09-15T13:00:00+03:00'
       finish_date: '2018-09-15T13:40:00+03:00'
@@ -246,14 +222,10 @@ activities:
       start_date: '2018-09-15T16:40:00+03:00'
       finish_date: '2018-09-15T17:30:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Большой зал
       start_date: '2018-09-15T16:00:00+03:00'
       finish_date: '2018-09-15T16:40:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Большой зал
       start_date: '2018-09-15T10:20:00+03:00'
       finish_date: '2018-09-15T10:30:00+03:00'
@@ -269,8 +241,6 @@ activities:
       start_date: '2018-09-15T17:30:00+03:00'
       finish_date: '2018-09-15T18:20:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Малый зал
       start_date: '2018-09-15T13:00:00+03:00'
       finish_date: '2018-09-15T13:40:00+03:00'
@@ -306,14 +276,10 @@ activities:
       start_date: '2018-09-15T15:10:00+03:00'
       finish_date: '2018-09-15T16:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Большой зал
       start_date: '2018-09-15T16:00:00+03:00'
       finish_date: '2018-09-15T16:40:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Круглый стол
       start_date: '2018-09-15T14:30:00+03:00'
       finish_date: '2018-09-15T15:10:00+03:00'
@@ -336,8 +302,6 @@ activities:
       start_date: '2018-09-15T10:30:00+03:00'
       finish_date: '2018-09-15T11:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Малый зал
       start_date: '2018-09-15T14:30:00+03:00'
       finish_date: '2018-09-15T15:10:00+03:00'
@@ -376,14 +340,10 @@ activities:
       start_date: '2018-09-15T10:30:00+03:00'
       finish_date: '2018-09-15T11:20:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Малый зал
       start_date: '2018-09-15T10:20:00+03:00'
       finish_date: '2018-09-15T10:30:00+03:00'
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Малый зал
       start_date: '2018-09-15T14:30:00+03:00'
       finish_date: '2018-09-15T15:10:00+03:00'

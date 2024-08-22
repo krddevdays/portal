@@ -17,20 +17,14 @@ venue:
         - name: Зал
 activities:
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Зал
       start_date: '2019-03-17T14:00:00+03:00'
       finish_date: '2019-03-17T14:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Зал
       start_date: '2019-03-17T16:00:00+03:00'
       finish_date: '2019-03-17T16:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Зал
       start_date: '2019-03-17T13:00:00+03:00'
       finish_date: '2019-03-17T13:20:00+03:00'
@@ -94,14 +88,10 @@ activities:
       start_date: '2019-03-17T13:20:00+03:00'
       finish_date: '2019-03-17T14:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Зал
       start_date: '2019-03-17T15:00:00+03:00'
       finish_date: '2019-03-17T15:20:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Зал
       start_date: '2019-03-17T12:10:00+03:00'
       finish_date: '2019-03-17T12:20:00+03:00'

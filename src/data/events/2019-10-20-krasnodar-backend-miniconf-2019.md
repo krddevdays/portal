@@ -32,8 +32,6 @@ activities:
       start_date: '2019-10-20T13:20:00+03:00'
       finish_date: '2019-10-20T14:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-10-20T15:00:00+03:00'
       finish_date: '2019-10-20T15:20:00+03:00'
@@ -51,20 +49,14 @@ activities:
       start_date: '2019-10-20T14:20:00+03:00'
       finish_date: '2019-10-20T15:00:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Конференц-зал
       start_date: '2019-10-20T11:10:00+03:00'
       finish_date: '2019-10-20T11:20:00+03:00'
     - type: CLOSE
-      thing:
-          title: Закрытие
       zone: Конференц-зал
       start_date: '2019-10-20T16:00:00+03:00'
       finish_date: '2019-10-20T16:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-10-20T12:00:00+03:00'
       finish_date: '2019-10-20T12:20:00+03:00'
@@ -82,8 +74,6 @@ activities:
       start_date: '2019-10-20T11:20:00+03:00'
       finish_date: '2019-10-20T12:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-10-20T14:00:00+03:00'
       finish_date: '2019-10-20T14:20:00+03:00'
@@ -106,8 +96,6 @@ activities:
       start_date: '2019-10-20T15:20:00+03:00'
       finish_date: '2019-10-20T16:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2019-10-20T13:00:00+03:00'
       finish_date: '2019-10-20T13:20:00+03:00'

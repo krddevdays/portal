@@ -31,7 +31,6 @@ export type DiscussionActivityProps = BaseActivityProps & {
 export type ActivityProps =
     | (BaseActivityProps & {
           type: 'WELCOME' | 'COFFEE' | 'LUNCH' | 'CLOSE'
-          thing: { title: string }
       })
     | TalkActivityProps
     | DiscussionActivityProps
@@ -141,15 +140,32 @@ function ScheduleTable(props: ScheduleTableProps) {
 }
 
 function Activity(props: ActivityProps) {
-    let title = props.thing && props.thing.title
-
-    if (!title) {
+    const title: string = (() => {
         switch (props.type) {
             case 'TALK':
-                title = 'Доклад'
-                break
+                if (props.thing) {
+                    return props.thing.title
+                } else {
+                    return 'Доклад'
+                }
+            case 'DISCUSSION':
+                if (props.thing) {
+                    return props.thing.title
+                } else {
+                    return 'Круглый стол'
+                }
+            case 'WELCOME':
+                return 'Открытие'
+            case 'COFFEE':
+                return 'Кофе-брейк'
+            case 'LUNCH':
+                return 'Обед'
+            case 'CLOSE':
+                return 'Закрытие'
+            default:
+                return props satisfies never
         }
-    }
+    })()
 
     return (
         <div className={styles.scheduleActivity}>
@@ -159,7 +175,7 @@ function Activity(props: ActivityProps) {
                     <Author {...props.thing.speaker} small />
                 </div>
             )}
-            {props.type === 'DISCUSSION' && props.thing && (
+            {props.type === 'DISCUSSION' && title && (
                 <div className={styles.scheduleActivity__author}>
                     Круглый стол
                 </div>

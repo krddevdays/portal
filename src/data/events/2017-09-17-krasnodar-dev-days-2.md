@@ -14,8 +14,6 @@ venue:
         - name: Конференц-зал
 activities:
     - type: LUNCH
-      thing:
-          title: Обед
       zone: Конференц-зал
       start_date: '2017-09-17T14:45:00+03:00'
       finish_date: '2017-09-17T15:30:00+03:00'
@@ -44,8 +42,6 @@ activities:
       start_date: '2017-09-17T19:00:00+03:00'
       finish_date: '2017-09-17T19:45:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Конференц-зал
       start_date: '2017-09-17T10:20:00+03:00'
       finish_date: '2017-09-17T10:30:00+03:00'
@@ -63,8 +59,6 @@ activities:
       start_date: '2017-09-17T16:15:00+03:00'
       finish_date: '2017-09-17T17:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2017-09-17T12:00:00+03:00'
       finish_date: '2017-09-17T12:30:00+03:00'
@@ -106,8 +100,6 @@ activities:
       start_date: '2017-09-17T17:00:00+03:00'
       finish_date: '2017-09-17T17:45:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Конференц-зал
       start_date: '2017-09-17T17:45:00+03:00'
       finish_date: '2017-09-17T18:15:00+03:00'

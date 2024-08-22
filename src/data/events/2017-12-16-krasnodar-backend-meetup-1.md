@@ -17,8 +17,6 @@ venue:
         - name: Лекторий
 activities:
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Лекторий
       start_date: '2017-12-16T14:00:00+03:00'
       finish_date: '2017-12-16T14:20:00+03:00'
@@ -37,8 +35,6 @@ activities:
       start_date: '2017-12-16T13:20:00+03:00'
       finish_date: '2017-12-16T14:00:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Лекторий
       start_date: '2017-12-16T13:00:00+03:00'
       finish_date: '2017-12-16T13:20:00+03:00'
@@ -58,14 +54,10 @@ activities:
       start_date: '2017-12-16T15:20:00+03:00'
       finish_date: '2017-12-16T16:00:00+03:00'
     - type: WELCOME
-      thing:
-          title: Открытие
       zone: Лекторий
       start_date: '2017-12-16T12:10:00+03:00'
       finish_date: '2017-12-16T12:20:00+03:00'
     - type: COFFEE
-      thing:
-          title: Кофе-брейк
       zone: Лекторий
       start_date: '2017-12-16T15:00:00+03:00'
       finish_date: '2017-12-16T15:20:00+03:00'
