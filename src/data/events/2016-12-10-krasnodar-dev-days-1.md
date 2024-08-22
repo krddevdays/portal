@@ -1,6 +1,5 @@
 ---
 legacy_id: 2
-slug: krasnodar-dev-days-1
 name: 'Krasnodar Dev Days #1'
 short_description: >-
     Конференция от разработчиков и для разработчиков. На мероприятие будут

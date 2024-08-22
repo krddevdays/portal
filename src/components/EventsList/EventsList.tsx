@@ -5,7 +5,7 @@ import { Card, CardDescription, CardHeader } from '@/components/ui/card.tsx'
 import { Skeleton } from '@/components/ui/skeleton.tsx'
 
 type Event = {
-    legacy_id: number
+    id: string
     name: string
     start_date: string
     finish_date: string
@@ -26,7 +26,7 @@ export default function EventsList(props: EventsListProps) {
                 <li key={index}>
                     <Card className="relative h-full">
                         <Link
-                            href={`/events/${event.legacy_id}`}
+                            href={`/events/${encodeURIComponent(event.id)}`}
                             className="absolute inset-0 focus:none"
                         />
                         <CardHeader>

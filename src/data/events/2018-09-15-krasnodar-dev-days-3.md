@@ -1,6 +1,5 @@
 ---
 legacy_id: 1
-slug: krasnodar-dev-days-3
 name: 'Krasnodar Dev Days #3'
 short_description: 3-я ежегодная конфереция разработчиков Краснодара и края.
 start_date: '2018-09-15T10:00:00+03:00'

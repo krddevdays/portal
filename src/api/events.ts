@@ -114,9 +114,9 @@ const venueSchema = z.object({
 })
 
 const schema = z.object({
+    id: z.string(),
     legacy_id: z.number(),
     qtickets_id: z.number().optional(),
-    slug: z.string(),
     name: z.string(),
     start_date: z.string(),
     finish_date: z.string(),
@@ -139,7 +139,7 @@ const eventsDirectory = path.join(process.cwd(), '/src/data/events')
 export async function getEvent(id: string): Promise<EventResponse | null> {
     return (
         (await getEvents()).find(
-            (event) => event.legacy_id?.toString() === id
+            (event) => event.id === id || event.legacy_id?.toString() === id
         ) || null
     )
 }
@@ -156,12 +156,14 @@ export async function getEvents(): Promise<EventsResponse> {
     return (events = fileNames
         .map((fileName) => {
             const fullPath = path.join(eventsDirectory, fileName)
+            const id = fileName.replace(/\.md$/, '')
             const fileContents = fs.readFileSync(fullPath, 'utf8')
             const fileStat = fs.statSync(fullPath)
 
             const matterResult = matter(fileContents)
 
             return schema.parse({
+                id,
                 ...matterResult.data,
                 full_description: matterResult.content,
                 created_at: fileStat.ctime,

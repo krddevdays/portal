@@ -1,7 +1,6 @@
 ---
 qtickets_id: 11159
 legacy_id: 18
-slug: krasnodar-python-miniconf-2019
 name: Krasnodar Python miniConf 2019
 short_description: >-
     Для Python разработчиков самого широкого направления: от веб фреймворков и

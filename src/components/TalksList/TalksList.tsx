@@ -5,8 +5,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
 
 type Event = {
-    legacy_id: number
-    slug: string
+    id: string
     name: string
     start_date: string
     finish_date: string
@@ -56,7 +55,7 @@ export default function TalksList(props: TalksListProps) {
                             </div>
                         )}
                         <Link
-                            href={`/events/${talk.event.legacy_id}`}
+                            href={`/events/${encodeURIComponent(talk.event.id)}`}
                             className="absolute inset-0 focus:none"
                         />
                     </div>

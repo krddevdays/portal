@@ -1,6 +1,5 @@
 ---
 legacy_id: 3
-slug: krasnodar-dev-days-2
 name: 'Krasnodar Dev Days #2'
 short_description: Вторая full-day конференция в Краснодаре от разработчиков и для разработчиков.
 start_date: '2017-09-17T10:00:00+03:00'

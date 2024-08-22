@@ -1,6 +1,5 @@
 ---
 legacy_id: 9
-slug: krasnodar-backend-meetup-3
 name: 'Krasnodar Backend: Meetup #3'
 short_description: >-
     Для разработчиков серверных приложений про различные аспекты разработки,

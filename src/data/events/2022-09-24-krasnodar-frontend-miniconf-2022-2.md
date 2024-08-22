@@ -1,7 +1,6 @@
 ---
 qtickets_id: 48281
 legacy_id: 28
-slug: krasnodar-frontend-miniconf-2022-2
 name: Krasnodar Frontend miniConf 2022.2
 short_description: >-
     Для специалистов по клиентской разработке в браузере, JavaScript, вёрстке и

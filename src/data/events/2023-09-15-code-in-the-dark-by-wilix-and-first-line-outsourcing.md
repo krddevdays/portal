@@ -1,6 +1,5 @@
 ---
 legacy_id: 30
-slug: code-in-the-dark-by-wilix-and-first-line-outsourcing
 name: Code in the Dark (by WILIX & First Line Outsourcing)
 short_description: >-
     Соревнование, где нужно сверстать простую HTML+CSS страницу без подсказок,

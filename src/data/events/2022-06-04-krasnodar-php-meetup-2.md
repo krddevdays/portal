@@ -1,7 +1,6 @@
 ---
 qtickets_id: 41537
 legacy_id: 26
-slug: krasnodar-php-meetup-2
 name: 'Krasnodar PHP Meetup #2'
 short_description: Для PHP разработчиков всех направлений - от сайтов до web-приложений
 start_date: '2022-06-04T12:00:00+03:00'

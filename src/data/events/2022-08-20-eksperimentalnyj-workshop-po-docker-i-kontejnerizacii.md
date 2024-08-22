@@ -1,7 +1,6 @@
 ---
 qtickets_id: 47707
 legacy_id: 27
-slug: eksperimentalnyj-workshop-po-docker-i-kontejnerizacii
 name: Экспериментальный workshop по Docker и контейнеризации
 short_description: >-
     Вместе разберёмся как работает контейнеризация, попрыгаем по граблям, поспорим

@@ -1,6 +1,5 @@
 ---
 legacy_id: 6
-slug: krasnodar-frontend-meetup-2
 name: 'Krasnodar Frontend: Meetup #2'
 short_description: >-
     Для специалистов по клиентской разработке в браузере, JavaScript, вёрстке и

@@ -1,7 +1,6 @@
 ---
 qtickets_id: 28153
 legacy_id: 22
-slug: krasnodar-backend-miniconf-2021
 name: Krasnodar Backend miniConf 2021
 short_description: >-
     Для разработчиков серверных приложений про различные аспекты разработки,

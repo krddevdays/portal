@@ -4,7 +4,7 @@ import {
     isActivityTalk,
     isScheduleActivity,
 } from '@/api/events'
-import { notFound } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import { getTickets } from '@/api/qtickets'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -43,6 +43,11 @@ export default async function Page({ params }: Props) {
     if (event === null) {
         notFound()
     }
+
+    if (String(event.legacy_id) === params.id) {
+        permanentRedirect(`/events/${encodeURIComponent(event.id)}`)
+    }
+
     const talks = event.activities
         .filter(isActivityTalk)
         .map((activity) => activity.thing)
@@ -403,7 +408,7 @@ async function EventPrice(props: EventPriceProps) {
                     tickets.types.some((type) => type.free_quantity) ? (
                         <div className={styles.eventPriceButton}>
                             <Link
-                                href={`/events/${props.eventId}/order`}
+                                href={`/events/${encodeURIComponent(props.eventId)}/order`}
                                 className={buttonVariants()}
                             >
                                 Зарегистрироваться

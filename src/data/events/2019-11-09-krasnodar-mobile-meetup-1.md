@@ -1,7 +1,6 @@
 ---
 qtickets_id: 10521
 legacy_id: 17
-slug: krasnodar-mobile-meetup-1
 name: 'Krasnodar Mobile: Meetup #1'
 short_description: >-
     Митап для специалистов мобильной разработки, нативных и кроссплатформенных

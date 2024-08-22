@@ -1,7 +1,6 @@
 ---
 qtickets_id: 7637
 legacy_id: 14
-slug: krasnodar-dev-conf-2019
 name: Krasnodar Dev Conf 2019
 short_description: IV ежегодная конференция разработчиков в Краснодаре
 image: https://storage.yandexcloud.net/krddev-content/background/kdc19.jpg

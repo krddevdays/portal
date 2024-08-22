@@ -1,7 +1,6 @@
 ---
 qtickets_id: 9865
 legacy_id: 16
-slug: krasnodar-frontend-miniconf-2019
 name: Krasnodar Frontend miniConf 2019
 short_description: >-
     Для специалистов по клиентской разработке в браузере, JavaScript, вёрстке и

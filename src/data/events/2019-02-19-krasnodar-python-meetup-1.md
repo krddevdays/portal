@@ -1,6 +1,5 @@
 ---
 legacy_id: 11
-slug: krasnodar-python-meetup-1
 name: 'Krasnodar Python: Meetup #1'
 short_description: >-
     Для Python разработчиков самого широкого направления: от веб фреймворков и
