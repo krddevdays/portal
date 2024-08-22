@@ -25,12 +25,24 @@ export default function MainLayout({
                                 >
                                     Мероприятия
                                 </Link>
+                                <Link
+                                    href="/talks"
+                                    className="text-base font-medium text-white hover:text-indigo-50"
+                                >
+                                    Доклады
+                                </Link>
                             </div>
                         </div>
                     </div>
                     <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
                         <Link
                             href="/events"
+                            className="text-base font-medium text-white hover:text-indigo-50"
+                        >
+                            Мероприятия
+                        </Link>
+                        <Link
+                            href="/talks"
                             className="text-base font-medium text-white hover:text-indigo-50"
                         >
                             Мероприятия
