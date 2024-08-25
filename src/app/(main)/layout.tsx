@@ -31,8 +31,21 @@ export default function MainLayout({
                                 >
                                     Доклады
                                 </Link>
+                                <Link
+                                    href="/team"
+                                    className="text-base font-medium text-white hover:text-indigo-50"
+                                >
+                                    Команда
+                                </Link>
                             </div>
                         </div>
+
+                        <Link
+                            href="/talks/how-to"
+                            className="text-base font-medium text-white hover:text-indigo-50"
+                        >
+                            Стать спикером
+                        </Link>
                     </div>
                     <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
                         <Link
@@ -46,6 +59,12 @@ export default function MainLayout({
                             className="text-base font-medium text-white hover:text-indigo-50"
                         >
                             Доклады
+                        </Link>
+                        <Link
+                            href="/team"
+                            className="text-base font-medium text-white hover:text-indigo-50"
+                        >
+                            Команда
                         </Link>
                     </div>
                 </nav>
