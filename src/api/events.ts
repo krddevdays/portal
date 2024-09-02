@@ -115,7 +115,7 @@ const venueSchema = z.object({
 
 const schema = z.object({
     id: z.string(),
-    legacy_id: z.number(),
+    legacy_id: z.number().optional(),
     qtickets_id: z.number().optional(),
     name: z.string(),
     start_date: z.string(),

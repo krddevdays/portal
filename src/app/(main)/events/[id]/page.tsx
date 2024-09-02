@@ -34,7 +34,7 @@ type Props = {
 export async function generateStaticParams() {
     const events = await getEvents()
 
-    return events.map((event) => ({ id: event.legacy_id.toString() }))
+    return events.map((event) => ({ id: event.name }))
 }
 
 export default async function Page({ params }: Props) {
@@ -102,7 +102,7 @@ export default async function Page({ params }: Props) {
                     <Suspense>
                         <EventPrice
                             description={event.ticket_description}
-                            eventId={event.legacy_id.toString()}
+                            eventId={event.id}
                             qticketsId={event.qtickets_id}
                         />
                     </Suspense>
