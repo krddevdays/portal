@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "@hookform/resolvers": "^3.9.0",
-        "@mantine/hooks": "^7.12.2",
+        "@mantine/hooks": "^7.13.1",
         "@maskito/core": "^3.0.1",
         "@maskito/kit": "^3.0.1",
         "@maskito/react": "^3.0.1",
