@@ -15,6 +15,17 @@ venue:
 activities:
     - type: TALK
       thing:
+          title: Как перестать быть фреймворк разработчиком
+          description: |
+              Вспомним, зачем нам на самом деле библиотеки и фреймворки, попытаемся понять, где мы свернули не туда и научимся проектировать приложения устойчивые к любым изменениям.
+          speaker:
+              first_name: Никита
+              last_name: Трофимов
+              work: Т-Банк
+              position: Frontend TechLead
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/nikita-trofimov.jpg
+    - type: TALK
+      thing:
           title: Система типов TypeScript как язык программирования
           description: |
               Сколько типов вы пишете и используете в своих проектах? Насколько они сложны? Случалось ли вам думать, что что-то невозможно полноценно затипизировать? А задумывались ли вы о том, на что действительно способна система типов TypeScript?  
@@ -26,6 +37,7 @@ activities:
               last_name: Тараненко
               work: ИТ-холдинг Т1
               position: Главный разработчик
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/andrei-taranenko.jpg
     - type: TALK
       thing:
           title: Быстрый, масштабируемый CI для фронтендера
@@ -37,55 +49,39 @@ activities:
               last_name: Янгиров
               work: ЗВУК, Frontend Core Team
               position: Ведущий разработчик
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/yangirov.jpg
 #    - type: WELCOME
 #      zone: Большой зал
 #      start_date: '2024-10-26T12:10:00+03:00'
-#      finish_date: '2024-10-26T12:20:00+03:00'
+#      finish_date: '2024-10-26T12:15:00+03:00'
 #    - type: TALK
 #      thing: null
 #      zone: Большой зал
-#      start_date: '2024-10-26T12:20:00+03:00'
+#      start_date: '2024-10-26T12:15:00+03:00'
 #      finish_date: '2024-10-26T13:00:00+03:00'
-#    - type: COFFEE
+#    - type: TALK
+#      thing: null
 #      zone: Большой зал
 #      start_date: '2024-10-26T13:00:00+03:00'
-#      finish_date: '2024-10-26T13:20:00+03:00'
+#      finish_date: '2024-10-26T13:45:00+03:00'
+#    - type: LUNCH
+#      zone: Большой зал
+#      start_date: '2024-10-26T13:45:00+03:00'
+#      finish_date: '2024-10-26T14:45:00+03:00'
 #    - type: TALK
 #      thing: null
 #      zone: Большой зал
-#      start_date: '2024-10-26T13:20:00+03:00'
-#      finish_date: '2024-10-26T14:00:00+03:00'
-#    - type: COFFEE
-#      zone: Большой зал
-#      start_date: '2024-10-26T14:00:00+03:00'
-#      finish_date: '2024-10-26T14:20:00+03:00'
+#      start_date: '2024-10-26T14:45:00+03:00'
+#      finish_date: '2024-10-26T15:30:00+03:00'
 #    - type: TALK
 #      thing: null
 #      zone: Большой зал
-#      start_date: '2024-10-26T14:20:00+03:00'
-#      finish_date: '2024-10-26T15:00:00+03:00'
-#    - type: COFFEE
-#      zone: Большой зал
-#      start_date: '2024-10-26T15:00:00+03:00'
-#      finish_date: '2024-10-26T15:20:00+03:00'
-#    - type: TALK
-#      thing: null
-#      zone: Большой зал
-#      start_date: '2024-10-26T15:20:00+03:00'
-#      finish_date: '2024-10-26T16:00:00+03:00'
-#    - type: COFFEE
-#      zone: Большой зал
-#      start_date: '2024-10-26T16:00:00+03:00'
-#      finish_date: '2024-10-26T16:20:00+03:00'
-#    - type: TALK
-#      thing: null
-#      zone: Большой зал
-#      start_date: '2024-10-26T16:20:00+03:00'
-#      finish_date: '2024-10-26T17:00:00+03:00'
+#      start_date: '2024-10-26T15:30:00+03:00'
+#      finish_date: '2024-10-26T16:15:00+03:00'
 #    - type: CLOSE
 #      zone: Большой зал
-#      start_date: '2024-10-26T17:00:00+03:00'
-#      finish_date: '2024-10-26T17:00:00+03:00'
+#      start_date: '2024-10-26T16:15:00+03:00'
+#      finish_date: '2024-10-26T16:15:00+03:00'
 ---
 
 [Krasnodar Frontend](https://t.me/krdfrontend) — это сообщество специалистов по клиентской разработке в браузере, JavaScript, вёрстке и дизайну, которое существует с 2017 года. Цель сообщества формировать офлайн и онлайн среду, где специалисты могут делиться опытом, помогать друг другу и просто хорошо проводить время в компании коллег.
