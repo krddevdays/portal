@@ -6,7 +6,7 @@ short_description: >-
     дизайну
 image: https://storage.yandexcloud.net/krddev-content/background/frontend.jpg
 start_date: '2024-10-26T12:00:00+03:00'
-finish_date: '2024-10-26T17:00:00+03:00'
+finish_date: '2024-10-26T16:15:00+03:00'
 venue:
     name: Инновационный центр «Аквариум»
     address: Краснодар, ул. Северная, 405
@@ -50,38 +50,51 @@ activities:
               work: ЗВУК, Frontend Core Team
               position: Ведущий разработчик
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/yangirov.jpg
-#    - type: WELCOME
-#      zone: Большой зал
-#      start_date: '2024-10-26T12:10:00+03:00'
-#      finish_date: '2024-10-26T12:15:00+03:00'
-#    - type: TALK
-#      thing: null
-#      zone: Большой зал
-#      start_date: '2024-10-26T12:15:00+03:00'
-#      finish_date: '2024-10-26T13:00:00+03:00'
-#    - type: TALK
-#      thing: null
-#      zone: Большой зал
-#      start_date: '2024-10-26T13:00:00+03:00'
-#      finish_date: '2024-10-26T13:45:00+03:00'
-#    - type: LUNCH
-#      zone: Большой зал
-#      start_date: '2024-10-26T13:45:00+03:00'
-#      finish_date: '2024-10-26T14:45:00+03:00'
-#    - type: TALK
-#      thing: null
-#      zone: Большой зал
-#      start_date: '2024-10-26T14:45:00+03:00'
-#      finish_date: '2024-10-26T15:30:00+03:00'
-#    - type: TALK
-#      thing: null
-#      zone: Большой зал
-#      start_date: '2024-10-26T15:30:00+03:00'
-#      finish_date: '2024-10-26T16:15:00+03:00'
-#    - type: CLOSE
-#      zone: Большой зал
-#      start_date: '2024-10-26T16:15:00+03:00'
-#      finish_date: '2024-10-26T16:15:00+03:00'
+    - type: TALK
+      thing:
+          title: Энтерпрайз с человеческим лицом
+          description: |
+              TBD, Shist Left тестирование, SCRUM и прочее, можно ли внедрить это всё в большой продукт? Как эти практики помогают поставлять ценность?  
+
+              Разберём реальные примеры факапов и успешных случаев. А также рассмотрим рекомендаций, какие практики нужны вашей команде.
+          speaker:
+              first_name: Александр
+              last_name: Погорелов
+              work: Я.Практикум
+              position: Старший разработчик интерфейсов
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/aleks-pogorelov-2.jpg
+    - type: WELCOME
+      zone: Большой зал
+      start_date: '2024-10-26T12:10:00+03:00'
+      finish_date: '2024-10-26T12:15:00+03:00'
+    - type: TALK
+      thing: null
+      zone: Большой зал
+      start_date: '2024-10-26T12:15:00+03:00'
+      finish_date: '2024-10-26T13:00:00+03:00'
+    - type: TALK
+      thing: null
+      zone: Большой зал
+      start_date: '2024-10-26T13:00:00+03:00'
+      finish_date: '2024-10-26T13:45:00+03:00'
+    - type: LUNCH
+      zone: Большой зал
+      start_date: '2024-10-26T13:45:00+03:00'
+      finish_date: '2024-10-26T14:45:00+03:00'
+    - type: TALK
+      thing: null
+      zone: Большой зал
+      start_date: '2024-10-26T14:45:00+03:00'
+      finish_date: '2024-10-26T15:30:00+03:00'
+    - type: TALK
+      thing: null
+      zone: Большой зал
+      start_date: '2024-10-26T15:30:00+03:00'
+      finish_date: '2024-10-26T16:15:00+03:00'
+    - type: CLOSE
+      zone: Большой зал
+      start_date: '2024-10-26T16:15:00+03:00'
+      finish_date: '2024-10-26T16:15:00+03:00'
 ---
 
 [Krasnodar Frontend](https://t.me/krdfrontend) — это сообщество специалистов по клиентской разработке в браузере, JavaScript, вёрстке и дизайну, которое существует с 2017 года. Цель сообщества формировать офлайн и онлайн среду, где специалисты могут делиться опытом, помогать друг другу и просто хорошо проводить время в компании коллег.
