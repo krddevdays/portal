@@ -13,6 +13,26 @@ venue:
     latitude: 45.037499
     longitude: 38.995776
 activities:
+    - type: WELCOME
+      zone: Большой зал
+      start_date: '2024-10-26T12:10:00+03:00'
+      finish_date: '2024-10-26T12:15:00+03:00'
+    - type: TALK
+      thing:
+          title: Энтерпрайз с человеческим лицом
+          description: |
+              TBD, Shist Left тестирование, SCRUM и прочее, можно ли внедрить это всё в большой продукт? Как эти практики помогают поставлять ценность?  
+
+              Разберём реальные примеры факапов и успешных случаев. А также рассмотрим рекомендаций, какие практики нужны вашей команде.
+          speaker:
+              first_name: Александр
+              last_name: Погорелов
+              work: Я.Практикум
+              position: Старший разработчик интерфейсов
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/aleks-pogorelov-2.jpg
+      zone: Большой зал
+      start_date: '2024-10-26T12:15:00+03:00'
+      finish_date: '2024-10-26T13:00:00+03:00'
     - type: TALK
       thing:
           title: Как перестать быть фреймворк разработчиком
@@ -24,6 +44,28 @@ activities:
               work: Т-Банк
               position: Frontend TechLead
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/nikita-trofimov.jpg
+      zone: Большой зал
+      start_date: '2024-10-26T13:00:00+03:00'
+      finish_date: '2024-10-26T13:45:00+03:00'
+    - type: LUNCH
+      zone: Большой зал
+      start_date: '2024-10-26T13:45:00+03:00'
+      finish_date: '2024-10-26T14:45:00+03:00'
+    - type: TALK
+      thing:
+          title: Быстрый, масштабируемый CI для фронтендера
+          description: |
+              Доклад посвящен созданию универсальных, легко подключаемых CI/CD пайплайнов для фронтенд-разработчиков.  
+              Основное внимание будет уделено ускорению процессов, масштабируемости и повторному использованию конфигураций в различных проектах.
+          speaker:
+              first_name: Эмиль
+              last_name: Янгиров
+              work: ЗВУК, Frontend Core Team
+              position: Ведущий разработчик
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/yangirov.jpg
+      zone: Большой зал
+      start_date: '2024-10-26T14:45:00+03:00'
+      finish_date: '2024-10-26T15:30:00+03:00'
     - type: TALK
       thing:
           title: Система типов TypeScript как язык программирования
@@ -38,56 +80,6 @@ activities:
               work: ИТ-холдинг Т1
               position: Главный разработчик
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/andrei-taranenko.jpg
-    - type: TALK
-      thing:
-          title: Быстрый, масштабируемый CI для фронтендера
-          description: |
-              Доклад посвящен созданию универсальных, легко подключаемых CI/CD пайплайнов для фронтенд-разработчиков.  
-              Основное внимание будет уделено ускорению процессов, масштабируемости и повторному использованию конфигураций в различных проектах.
-          speaker:
-              first_name: Эмиль
-              last_name: Янгиров
-              work: ЗВУК, Frontend Core Team
-              position: Ведущий разработчик
-              avatar: https://storage.yandexcloud.net/krddev-content/speakers/yangirov.jpg
-    - type: TALK
-      thing:
-          title: Энтерпрайз с человеческим лицом
-          description: |
-              TBD, Shist Left тестирование, SCRUM и прочее, можно ли внедрить это всё в большой продукт? Как эти практики помогают поставлять ценность?  
-
-              Разберём реальные примеры факапов и успешных случаев. А также рассмотрим рекомендаций, какие практики нужны вашей команде.
-          speaker:
-              first_name: Александр
-              last_name: Погорелов
-              work: Я.Практикум
-              position: Старший разработчик интерфейсов
-              avatar: https://storage.yandexcloud.net/krddev-content/speakers/aleks-pogorelov-2.jpg
-    - type: WELCOME
-      zone: Большой зал
-      start_date: '2024-10-26T12:10:00+03:00'
-      finish_date: '2024-10-26T12:15:00+03:00'
-    - type: TALK
-      thing: null
-      zone: Большой зал
-      start_date: '2024-10-26T12:15:00+03:00'
-      finish_date: '2024-10-26T13:00:00+03:00'
-    - type: TALK
-      thing: null
-      zone: Большой зал
-      start_date: '2024-10-26T13:00:00+03:00'
-      finish_date: '2024-10-26T13:45:00+03:00'
-    - type: LUNCH
-      zone: Большой зал
-      start_date: '2024-10-26T13:45:00+03:00'
-      finish_date: '2024-10-26T14:45:00+03:00'
-    - type: TALK
-      thing: null
-      zone: Большой зал
-      start_date: '2024-10-26T14:45:00+03:00'
-      finish_date: '2024-10-26T15:30:00+03:00'
-    - type: TALK
-      thing: null
       zone: Большой зал
       start_date: '2024-10-26T15:30:00+03:00'
       finish_date: '2024-10-26T16:15:00+03:00'
