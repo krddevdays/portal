@@ -16,6 +16,42 @@ venue:
     zones:
         - name: Большой зал
 activities:
+    - type: TALK
+      thing:
+          title: Применение rust-подходов в python проектах
+          description: |
+              Мы старательно писали типы, использовали энамы, очищали функции, ограничивали исключения и наследование, закручивали гайки на пайплайнах.  
+              Поделюсь опытом применения rust-практик для повышения стабильности и поддерживаемости работающего python-проекта.  
+              Mypy is your friend.
+          speaker:
+              first_name: Юрий
+              last_name: Киреев
+              work: АО Точка
+              position: backdev
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/jurij-kireev.jpg
+    - type: TALK
+      thing:
+          title: Как проверки перевернули, да толк вышел...
+          description: |
+              Доклад об автоматическом тестировании с помощью Python на конкретном примере перевернутой пирамиды Маслоу
+          speaker:
+              first_name: Антон
+              last_name: Поздняков
+              work: СКВЕР
+              position: Auto QA Engineer
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/anton-pozdnjakov.jpg
+    - type: TALK
+      thing:
+          title: Почему пятничный деплой - плохо, а алерты - хорошо
+          description: |
+              Пятничный релиз, день рождения начальника, отсутствие мониторинга — что могло пойти не так? Или как один инцидент заставил нас целиком пересмотреть подход к сопровождению сервисов на проде.  
+              Поделюсь историей факапа и выводами, которые мы сделали.
+          speaker:
+              first_name: Алексей
+              last_name: Титаренко
+              work: Яндекс
+              position: Тех. Лид
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/aleksej-titarenko.jpg
     - type: WELCOME
       zone: Большой зал
       start_date: '2025-08-30T12:10:00+03:00'
