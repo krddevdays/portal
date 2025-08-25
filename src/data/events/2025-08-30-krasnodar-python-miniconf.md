@@ -65,6 +65,7 @@ activities:
               last_name: Абрамян
               work: Т-Банк
               position: Старший разработчик
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/gurgen-abramjan.jpg
     - type: WELCOME
       zone: Большой зал
       start_date: '2025-08-30T12:10:00+03:00'
