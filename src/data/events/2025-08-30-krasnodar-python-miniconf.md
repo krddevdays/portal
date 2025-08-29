@@ -16,6 +16,10 @@ venue:
     zones:
         - name: Большой зал
 activities:
+    - type: WELCOME
+      zone: Большой зал
+      start_date: '2025-08-30T12:10:00+03:00'
+      finish_date: '2025-08-30T12:20:00+03:00'
     - type: TALK
       thing:
           title: Применение rust-подходов в python проектах
@@ -29,6 +33,32 @@ activities:
               work: АО Точка
               position: backdev
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/jurij-kireev.jpg
+      zone: Большой зал
+      start_date: '2025-08-30T12:20:00+03:00'
+      finish_date: '2025-08-30T13:00:00+03:00'
+    - type: COFFEE
+      zone: Большой зал
+      start_date: '2025-08-30T13:00:00+03:00'
+      finish_date: '2025-08-30T13:20:00+03:00'
+    - type: TALK
+      thing:
+          title: Как мы докатились до чистой архитектуры
+          description: |
+              Наш микросервис развивался стремительно, и одно маленькое изменение намекнуло нам на то, что текущая архитектура уже не удовлетворяет всем потребностям.  
+              Этот доклад про наш путь: через ошибки, выводы и реализацию к чистой архитектуре. На конкретном примере покажу как мы разложили всё по полочками и сократили время разработки новых фич.
+          speaker:
+              first_name: Гурген
+              last_name: Абрамян
+              work: Т-Банк
+              position: Старший разработчик
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/gurgen-abramjan.jpg
+      zone: Большой зал
+      start_date: '2025-08-30T13:20:00+03:00'
+      finish_date: '2025-08-30T14:00:00+03:00'
+    - type: LUNCH
+      zone: Большой зал
+      start_date: '2025-08-30T14:00:00+03:00'
+      finish_date: '2025-08-30T15:00:00+03:00'
     - type: TALK
       thing:
           title: Как проверки перевернули, да толк вышел...
@@ -42,6 +72,13 @@ activities:
               work: СКВЕР
               position: Auto QA Engineer
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/anton-pozdnjakov.jpg
+      zone: Большой зал
+      start_date: '2025-08-30T15:00:00+03:00'
+      finish_date: '2025-08-30T15:40:00+03:00'
+    - type: COFFEE
+      zone: Большой зал
+      start_date: '2025-08-30T15:40:00+03:00'
+      finish_date: '2025-08-30T16:00:00+03:00'
     - type: TALK
       thing:
           title: Почему пятничный деплой - плохо, а алерты - хорошо
@@ -54,51 +91,6 @@ activities:
               work: Яндекс
               position: Тех. Лид
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/aleksej-titarenko.jpg
-    - type: TALK
-      thing:
-          title: Как мы докатились до чистой архитектуры
-          description: |
-              Наш микросервис развивался стремительно, и одно маленькое изменение намекнуло нам на то, что текущая архитектура уже не удовлетворяет всем потребностям.  
-              Этот доклад про наш путь: через ошибки, выводы и реализацию к чистой архитектуре. На конкретном примере покажу как мы разложили всё по полочками и сократили время разработки новых фич.
-          speaker:
-              first_name: Гурген
-              last_name: Абрамян
-              work: Т-Банк
-              position: Старший разработчик
-              avatar: https://storage.yandexcloud.net/krddev-content/speakers/gurgen-abramjan.jpg
-    - type: WELCOME
-      zone: Большой зал
-      start_date: '2025-08-30T12:10:00+03:00'
-      finish_date: '2025-08-30T12:20:00+03:00'
-    - type: TALK
-      thing: null
-      zone: Большой зал
-      start_date: '2025-08-30T12:20:00+03:00'
-      finish_date: '2025-08-30T13:00:00+03:00'
-    - type: COFFEE
-      zone: Большой зал
-      start_date: '2025-08-30T13:00:00+03:00'
-      finish_date: '2025-08-30T13:20:00+03:00'
-    - type: TALK
-      thing: null
-      zone: Большой зал
-      start_date: '2025-08-30T13:20:00+03:00'
-      finish_date: '2025-08-30T14:00:00+03:00'
-    - type: LUNCH
-      zone: Большой зал
-      start_date: '2025-08-30T14:00:00+03:00'
-      finish_date: '2025-08-30T15:00:00+03:00'
-    - type: TALK
-      thing: null
-      zone: Большой зал
-      start_date: '2025-08-30T15:00:00+03:00'
-      finish_date: '2025-08-30T15:40:00+03:00'
-    - type: COFFEE
-      zone: Большой зал
-      start_date: '2025-08-30T15:40:00+03:00'
-      finish_date: '2025-08-30T16:00:00+03:00'
-    - type: TALK
-      thing: null
       zone: Большой зал
       start_date: '2025-08-30T16:00:00+03:00'
       finish_date: '2025-08-30T16:40:00+03:00'
