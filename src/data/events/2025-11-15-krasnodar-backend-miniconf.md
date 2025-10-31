@@ -16,6 +16,19 @@ venue:
     zones:
         - name: Большой зал
 activities:
+    - type: TALK
+      thing:
+          title: Почему ваш Python-сервис течёт, и что с этим делать
+          description: |
+              Управление памятью в Python — это просто, главно писать код без утечек!  
+              А если всё же не получилось, то разберём, как искать утечки в прод-сервисах, когда виноват код, а когда сторонние библиотеки.
+              В докладе — реальные кейсы из Яндекс.Лавки и пошаговые приёмы диагностики.
+          speaker:
+              first_name: Константин
+              last_name: Захматов
+              work: Яндекс
+              position: Ведущий разработчик программного обеспечения
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/konstantin-zahmatov.jpg
     - type: WELCOME
       zone: Большой зал
       start_date: '2025-11-15T12:10:00+03:00'
