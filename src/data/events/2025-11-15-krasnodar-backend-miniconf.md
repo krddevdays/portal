@@ -22,6 +22,8 @@ activities:
           description: |
               Управление памятью в Python — это просто, главно писать код без утечек!  
               А если всё же не получилось, то разберём, как искать утечки в прод-сервисах, когда виноват код, а когда сторонние библиотеки.
+
+
               В докладе — реальные кейсы из Яндекс.Лавки и пошаговые приёмы диагностики.
           speaker:
               first_name: Константин
@@ -29,6 +31,18 @@ activities:
               work: Яндекс
               position: Ведущий разработчик программного обеспечения
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/konstantin-zahmatov.jpg
+    - type: TALK
+      thing:
+          title: Зачем C++ разработчику Python?
+          description: |
+              Доклад о том, как использовать Python и Testsuite для интеграционного тестирования микросервисов, независимо от языка реализации.  
+              На примере сервисов на C++ разберём, как писать тесты по контрактам, моделировать связи между сервисами и автоматизировать проверку комплексных сценариев.
+          speaker:
+              first_name: Валерий
+              last_name: Горбачев
+              work: Яндекс.Еда
+              position: Старший инженер
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/valerij-gorbachev-2.jpg
     - type: WELCOME
       zone: Большой зал
       start_date: '2025-11-15T12:10:00+03:00'
