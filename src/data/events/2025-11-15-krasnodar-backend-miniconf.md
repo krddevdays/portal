@@ -71,6 +71,17 @@ activities:
               work: Точка
               position: Техлид
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/viktor-tyshhenko.jpg
+    - type: TALK
+      thing:
+          title: Решаем проблемы на примере кеширования контекстов в Spring
+          description: |
+              Поговорим про то как решать проблемы на примере истории из практики, заодно коснёмся механизма кеширования контекстов в Spring при запуске интеграционных тестов.
+          speaker:
+              first_name: Аскер
+              last_name: Хах
+              work: Яндекс.Маркет
+              position: Разработчик
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/asker-hah.jpg
     - type: WELCOME
       zone: Большой зал
       start_date: '2025-11-15T12:10:00+03:00'
