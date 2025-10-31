@@ -57,6 +57,20 @@ activities:
               work: Ветменеджер
               position: Исполнительный директор
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/vladimir-romanichev.jpg
+    - type: TALK
+      thing:
+          title: Эволюция CPython
+          description: |
+              За 30 лет развития Python прошел непростой путь и вырвался в ТОП-3 самых известных языков программирования.  
+
+              В докладе разберем что помогло ему стать таким популярным, важные вехи и как этот язык программирования сделал жизнь разработчиков проще.  
+              Но главное — что нас ждёт впереди. Какие у CPython остались проблемы, как их планируют решать и что уже реализовано в ближайшем релизе.
+          speaker:
+              first_name: Виктор
+              last_name: Тыщенко
+              work: Точка
+              position: Техлид
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/viktor-tyshhenko.jpg
     - type: WELCOME
       zone: Большой зал
       start_date: '2025-11-15T12:10:00+03:00'
