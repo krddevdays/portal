@@ -43,6 +43,20 @@ activities:
               work: Яндекс.Еда
               position: Старший инженер
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/valerij-gorbachev-2.jpg
+    - type: TALK
+      thing:
+          title: NULL. Выбросить нельзя использовать.
+          description: |
+              NULL — не ошибка, а мина замедленного действия. Каждый return null — это трещина в фундаменте вашего кода.  
+              Nullsafe-операторы и статический анализ лишь маскируют проблему, а не решают её.  
+
+              Пора вернуть ограничения в моду! Ограничения делает наш код сильнее.
+          speaker:
+              first_name: Владимир
+              last_name: Романичев
+              work: Ветменеджер
+              position: Исполнительный директор
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/vladimir-romanichev.jpg
     - type: WELCOME
       zone: Большой зал
       start_date: '2025-11-15T12:10:00+03:00'
