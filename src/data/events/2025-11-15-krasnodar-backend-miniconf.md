@@ -28,7 +28,7 @@ activities:
           speaker:
               first_name: Константин
               last_name: Захматов
-              work: Яндекс
+              work: Яндекс.Лавка
               position: Ведущий разработчик программного обеспечения
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/konstantin-zahmatov.jpg
     - type: TALK
