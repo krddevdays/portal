@@ -16,6 +16,48 @@ venue:
     zones:
         - name: Большой зал
 activities:
+    - type: WELCOME
+      zone: Большой зал
+      start_date: '2025-11-15T12:10:00+03:00'
+      finish_date: '2025-11-15T12:20:00+03:00'
+    - type: TALK
+      thing:
+          title: Решаем проблемы на примере кеширования контекстов в Spring
+          description: |
+              Иногда тесты падают не из-за багов в коде, а из-за особенностей инфраструктуры.  
+              На примере расследования флапающих интеграционных тестов посмотрим, как устроено кеширование контекстов в Spring, почему оно может вести себя неожиданно и как выстроить воспроизводимое тестовое окружение.
+          speaker:
+              first_name: Аскер
+              last_name: Хах
+              work: Яндекс.Маркет
+              position: Разработчик
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/asker-hah.jpg
+      zone: Большой зал
+      start_date: '2025-11-15T12:20:00+03:00'
+      finish_date: '2025-11-15T13:00:00+03:00'
+    - type: COFFEE
+      zone: Большой зал
+      start_date: '2025-11-15T13:00:00+03:00'
+      finish_date: '2025-11-15T13:20:00+03:00'
+    - type: TALK
+      thing:
+          title: Зачем C++ разработчику Python?
+          description: |
+              Доклад о том, как использовать Python и Testsuite для интеграционного тестирования микросервисов, независимо от языка реализации.  
+              На примере сервисов на C++ разберём, как писать тесты по контрактам, моделировать связи между сервисами и автоматизировать проверку комплексных сценариев.
+          speaker:
+              first_name: Валерий
+              last_name: Горбачев
+              work: Яндекс.Еда
+              position: Старший инженер
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/valerij-gorbachev-2.jpg
+      zone: Большой зал
+      start_date: '2025-11-15T13:20:00+03:00'
+      finish_date: '2025-11-15T14:00:00+03:00'
+    - type: COFFEE
+      zone: Большой зал
+      start_date: '2025-11-15T14:00:00+03:00'
+      finish_date: '2025-11-15T14:20:00+03:00'
     - type: TALK
       thing:
           title: Почему ваш Python-сервис течёт, и что с этим делать
@@ -31,32 +73,13 @@ activities:
               work: Яндекс.Лавка
               position: Ведущий разработчик программного обеспечения
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/konstantin-zahmatov.jpg
-    - type: TALK
-      thing:
-          title: Зачем C++ разработчику Python?
-          description: |
-              Доклад о том, как использовать Python и Testsuite для интеграционного тестирования микросервисов, независимо от языка реализации.  
-              На примере сервисов на C++ разберём, как писать тесты по контрактам, моделировать связи между сервисами и автоматизировать проверку комплексных сценариев.
-          speaker:
-              first_name: Валерий
-              last_name: Горбачев
-              work: Яндекс.Еда
-              position: Старший инженер
-              avatar: https://storage.yandexcloud.net/krddev-content/speakers/valerij-gorbachev-2.jpg
-    - type: TALK
-      thing:
-          title: NULL. Выбросить нельзя использовать.
-          description: |
-              NULL — не ошибка, а мина замедленного действия. Каждый return null — это трещина в фундаменте вашего кода.  
-              Nullsafe-операторы и статический анализ лишь маскируют проблему, а не решают её.  
-
-              Пора вернуть ограничения в моду! Ограничения делают наш код сильнее.
-          speaker:
-              first_name: Владимир
-              last_name: Романичев
-              work: Ветменеджер
-              position: Исполнительный директор
-              avatar: https://storage.yandexcloud.net/krddev-content/speakers/vladimir-romanichev.jpg
+      zone: Большой зал
+      start_date: '2025-11-15T14:20:00+03:00'
+      finish_date: '2025-11-15T15:00:00+03:00'
+    - type: COFFEE
+      zone: Большой зал
+      start_date: '2025-11-15T15:00:00+03:00'
+      finish_date: '2025-11-15T15:20:00+03:00'
     - type: TALK
       thing:
           title: Эволюция CPython
@@ -71,51 +94,6 @@ activities:
               work: Точка
               position: Техлид
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/viktor-tyshhenko.jpg
-    - type: TALK
-      thing:
-          title: Решаем проблемы на примере кеширования контекстов в Spring
-          description: |
-              Иногда тесты падают не из-за багов в коде, а из-за особенностей инфраструктуры.  
-              На примере расследования флапающих интеграционных тестов посмотрим, как устроено кеширование контекстов в Spring, почему оно может вести себя неожиданно и как выстроить воспроизводимое тестовое окружение.
-          speaker:
-              first_name: Аскер
-              last_name: Хах
-              work: Яндекс.Маркет
-              position: Разработчик
-              avatar: https://storage.yandexcloud.net/krddev-content/speakers/asker-hah.jpg
-    - type: WELCOME
-      zone: Большой зал
-      start_date: '2025-11-15T12:10:00+03:00'
-      finish_date: '2025-11-15T12:20:00+03:00'
-    - type: TALK
-      thing: null
-      zone: Большой зал
-      start_date: '2025-11-15T12:20:00+03:00'
-      finish_date: '2025-11-15T13:00:00+03:00'
-    - type: COFFEE
-      zone: Большой зал
-      start_date: '2025-11-15T13:00:00+03:00'
-      finish_date: '2025-11-15T13:20:00+03:00'
-    - type: TALK
-      thing: null
-      zone: Большой зал
-      start_date: '2025-11-15T13:20:00+03:00'
-      finish_date: '2025-11-15T14:00:00+03:00'
-    - type: COFFEE
-      zone: Большой зал
-      start_date: '2025-11-15T14:00:00+03:00'
-      finish_date: '2025-11-15T14:20:00+03:00'
-    - type: TALK
-      thing: null
-      zone: Большой зал
-      start_date: '2025-11-15T14:20:00+03:00'
-      finish_date: '2025-11-15T15:00:00+03:00'
-    - type: COFFEE
-      zone: Большой зал
-      start_date: '2025-11-15T15:00:00+03:00'
-      finish_date: '2025-11-15T15:20:00+03:00'
-    - type: TALK
-      thing: null
       zone: Большой зал
       start_date: '2025-11-15T15:20:00+03:00'
       finish_date: '2025-11-15T16:00:00+03:00'
@@ -124,7 +102,19 @@ activities:
       start_date: '2025-11-15T16:00:00+03:00'
       finish_date: '2025-11-15T16:20:00+03:00'
     - type: TALK
-      thing: null
+      thing:
+          title: NULL. Выбросить нельзя использовать.
+          description: |
+              NULL — не ошибка, а мина замедленного действия. Каждый return null — это трещина в фундаменте вашего кода.  
+              Nullsafe-операторы и статический анализ лишь маскируют проблему, а не решают её.  
+
+              Пора вернуть ограничения в моду! Ограничения делают наш код сильнее.
+          speaker:
+              first_name: Владимир
+              last_name: Романичев
+              work: Ветменеджер
+              position: Исполнительный директор
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/vladimir-romanichev.jpg
       zone: Большой зал
       start_date: '2025-11-15T16:20:00+03:00'
       finish_date: '2025-11-15T17:00:00+03:00'
