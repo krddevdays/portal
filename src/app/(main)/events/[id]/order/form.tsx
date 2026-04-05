@@ -472,32 +472,36 @@ export function OrderForm(props: OrderFormProps) {
                 <div className="text-2xl font-semibold">
                     Ваш заказ №{order.id} успешно оформлен
                 </div>
-                <div>
-                    Бронь действительна до{' '}
-                    <FormattedDate
-                        value={order.reservedTo}
-                        month="long"
-                        day="numeric"
-                        hour="numeric"
-                        minute="numeric"
-                    />
-                </div>
-                <a
-                    className={clsx(buttonVariants(), 'w-full')}
-                    href={order.paymentUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    Оплатить{' '}
-                    {order.price && (
-                        <FormattedNumber
-                            style="currency"
-                            value={order.price}
-                            currency={order.currency}
-                            minimumFractionDigits={0}
+                {!!order.price && (
+                    <div>
+                        Бронь действительна до{' '}
+                        <FormattedDate
+                            value={order.reservedTo}
+                            month="long"
+                            day="numeric"
+                            hour="numeric"
+                            minute="numeric"
                         />
-                    )}
-                </a>
+                    </div>
+                )}
+                {!!order.price && (
+                    <a
+                        className={clsx(buttonVariants(), 'w-full')}
+                        href={order.paymentUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Оплатить{' '}
+                        {order.price && (
+                            <FormattedNumber
+                                style="currency"
+                                value={order.price}
+                                currency={order.currency}
+                                minimumFractionDigits={0}
+                            />
+                        )}
+                    </a>
+                )}
             </div>
         )
     }
