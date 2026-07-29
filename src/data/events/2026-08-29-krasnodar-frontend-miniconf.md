@@ -169,6 +169,20 @@ activities:
               work: Банк Точка
               position: Разработчик
               avatar: https://storage.yandexcloud.net/krddev-content/speakers/fursov-roman.jpg
+    - type: TALK
+      thing:
+          title: 'Конечный автомат для frontend разработки'
+          description: |
+              Конечный автомат ассоциируется в основном с разработкой игр и бэкендом, но на самом деле он очень полезен и во фронтенд-разработке.  
+              Вы, скорее всего, его даже используете, но в неявном виде.
+
+              На данном докладе я покажу и расскажу, когда полезны конечные автоматы и какие они бывают
+          speaker:
+              first_name: Дмитрий
+              last_name: Тараненко
+              work: Т1
+              position: Главный разработчик
+              avatar: https://storage.yandexcloud.net/krddev-content/speakers/andrei-taranenko.jpg
 ---
 
 [Krasnodar Frontend](https://t.me/krdfrontend) — это сообщество специалистов по клиентской разработке в браузере, JavaScript, вёрстке и дизайну, которое существует с 2017 года. Цель сообщества формировать офлайн и онлайн среду, где специалисты могут делиться опытом, помогать друг другу и просто хорошо проводить время в компании коллег.
